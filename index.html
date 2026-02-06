@@ -14,12 +14,13 @@
         .bismillah { font-size: 2.2rem; text-align: center; margin: 20px 0; font-family: serif; color: #fff; }
         .latin-bold { font-weight: bold; color: #fff; font-size: 1.1rem; }
         .sunda { font-style: italic; background: #0d1b2a; padding: 15px; border-radius: 8px; border-left: 5px solid var(--primary); }
-        .btn-yasin { display: block; width: 100%; padding: 20px; background: var(--primary); color: white; text-align: center; border-radius: 12px; font-weight: bold; font-size: 1.2rem; margin: 20px 0; cursor: pointer; border: none; }
-        #yasin-content { display: none; background: #000; padding: 10px; border-radius: 10px; border: 1px solid var(--primary); }
+        .btn-yasin { display: block; width: 100%; padding: 20px; background: var(--primary); color: white; text-align: center; border-radius: 12px; font-weight: bold; font-size: 1.2rem; margin: 20px 0; cursor: pointer; border: none; transition: 0.3s; }
+        .btn-yasin:active { transform: scale(0.98); background: #388e3c; }
+        #yasin-content { display: none; background: #000; padding: 10px; border-radius: 10px; border: 1px solid var(--primary); margin-bottom: 20px; }
         .yasin-item { border-bottom: 1px solid #222; padding: 15px 0; }
-        .yasin-arab { font-size: 2rem; text-align: right; color: #fff; direction: rtl; margin-bottom: 10px; font-family: serif; }
+        .yasin-arab { font-size: 1.8rem; text-align: right; color: #fff; direction: rtl; margin-bottom: 10px; font-family: serif; line-height: 2.5; }
         .yasin-latin { color: var(--accent); font-style: italic; font-size: 1rem; }
-        .yasin-no { color: var(--primary); font-weight: bold; margin-right: 5px; }
+        .yasin-no { color: var(--primary); font-weight: bold; margin-bottom: 5px; display: inline-block; border: 1px solid var(--primary); padding: 2px 8px; border-radius: 50%; font-size: 0.8rem; }
     </style>
 </head>
 <body>
@@ -39,7 +40,7 @@
 
     <div class="card">
         <h2>KHUSUSON ALMARHUM & ALMARHUMMAH</h2>
-        <p style="color:var(--accent); font-weight:bold;">EMAD BIN ATA, MUNAH BINTI ATA, ATA BIN SINAN, SATI BINTI SAIN, APRAK BIN WIRI, SAIN BIN PULOH, LAISAH BINTI LIUN, ENCEP BIN JANIM, MANI BINTI SINAN, KANDI BIN ATA, ENCIM BIN JANIM, AMUNG BIN SINAN, SINAN BIN EJEN, SIAH BINTI SINAN, UDIK BIN SINAN, DACEM BINTI SINAN, AMIT BIN SINAN, SAMAH BINTI SINAN, MINING BIN GADEL, DASI BINTI MIUN, DACING BIN MINING, GADEL BIN PULAN, INI BINTI PULAN, MIUN BIN PULAN, BENIL BINTI PULAN, CEKIT BIN MIUN, BENIN BIN MIUN, LEOK BIN MIUN, INENG BIN GADEL, BOIN BIN GADEL, KARTINAH BINTI RAMIN.</p>
+        <p style="color:var(--accent); font-weight:bold; font-size: 0.9rem;">EMAD BIN ATA, MUNAH BINTI ATA, ATA BIN SINAN, SATI BINTI SAIN, APRAK BIN WIRI, SAIN BIN PULOH, LAISAH BINTI LIUN, ENCEP BIN JANIM, MANI BINTI SINAN, KANDI BIN ATA, ENCIM BIN JANIM, AMUNG BIN SINAN, SINAN BIN EJEN, SIAH BINTI SINAN, UDIK BIN SINAN, DACEM BINTI SINAN, AMIT BIN SINAN, SAMAH BINTI SINAN, MINING BIN GADEL, DASI BINTI MIUN, DACING BIN MINING, GADEL BIN PULAN, INI BINTI PULAN, MIUN BIN PULAN, BENIL BINTI PULAN, CEKIT BIN MIUN, BENIN BIN MIUN, LEOK BIN MIUN, INENG BIN GADEL, BOIN BIN GADEL, KARTINAH BINTI RAMIN.</p>
     </div>
 
     <button class="btn-yasin" onclick="toggleYasin()">KLIK BACA SURAT YASIN (83 AYAT)</button>
@@ -51,114 +52,119 @@
 
     <div class="card" style="margin-top:20px;">
         <h2>DOA PENUTUPAN</h2>
-        <div class="sunda">MUDAH MUDAHAN NGAOSAN YASIN IYEU DI TAMPI KU GUSTI ALLAH... (Sesuai teks elu Bro)</div>
+        <div class="sunda">MUDAH MUDAHAN NGAOSAN YASIN IYEU DI TAMPI KU GUSTI ALLAH...</div>
         <p class="latin-bold" style="margin-top:10px;">ALLAHUMMAGHFIRLAHU WARHAMHU WA'AFIHI WA'FUANHU... ALFATIHAH</p>
     </div>
 </div>
 
 <script>
-    // Data Yasin Lengkap (Gua masukin lewat Script biar file rapi tapi isi tetep full)
     const yasinData = [
         {no: 1, ar: "يٰسٓ", lt: "Yaa-Siiin"},
-        {no: 2, ar: "وَالۡقُرۡاٰنِ الۡحَكِيۡمِ", lt: "Wal-Qur-aanil-Hakiim"},
+        {no: 2, ar: "وَالۡقُرۡاٰنِ Al-HAKIIM", lt: "Wal-Qur-aanil-Hakiim"},
         {no: 3, ar: "اِنَّكَ لَمِنَ الۡمُرۡسَلِيۡنَۙ", lt: "Innaka laminal mursaliin"},
         {no: 4, ar: "عَلٰى صِرَاطٍ مُّسۡتَقِيۡمٍؕ‏", lt: "'Alaa Siraatim Mustaqiim"},
         {no: 5, ar: "تَنۡزِيۡلَ الۡعَزِيۡزِ الرَّحِيۡمِ", lt: "Tanziilal 'Aziizir Rahiim"},
-        {no: 6, ar: "لِتُنۡذِرَ قَوۡمًا mَّاۤ اُنۡذِرَ اٰبَآؤُهُمۡ فَهُمۡ غٰفِلُوۡنَ", lt: "Litunzira qawmam maaa unzira aabaaa'uhum fahum ghaafiluun"},
-        {no: 7, ar: "لَقَدۡ حَقَّ الۡقَوۡلُ عَلٰٓى اَكۡthَرِهِمۡ فَهُمۡ لَا يُؤۡمِنُوۡنَ", lt: "Laqad haqqal qawlu 'alaaa aksarihim fahum laa yu'minuun"},
-        {no: 8, ar: "اِنَّا جَعَلۡنَا فِىۡۤ اَعۡنَاقِهِمۡ اَغۡلٰلًا فَهِىَ اِلَى الۡاَ ذۡقَانِ فَهُمۡ مُّقۡمَحُوۡنَ", lt: "Innaa ja'alnaa fiii a'naaqihim aghlaalan fahiya ilal azqooni fahum muqmahuun"},
-        {no: 9, ar: "وَجَعَلۡنَا مِنۡۢ بَيۡنِ اَيۡدِيۡهِمۡ سَدًّا وَّمِنۡ خَلۡفِهِمۡ سَدًّا فَاَغۡشَيۡنٰهُمۡ فَهُمۡ لَا يُبۡصِرُوۡنَ", lt: "Wa ja'alnaa mim baini aydiihim saddanw-wa min khalfihim saddan fa aghshai naahum fahum laa yubsiruun"},
-        {no: 10, ar: "وَسَوَآءٌ عَلَيۡهِمۡ ءَاَنۡذَرۡتَهُمۡ اَمۡ لَمۡ تُنۡذِرۡهُمۡ لَا يُؤۡمِنُوۡنَ", lt: "Wa sawaaa'un 'alaihim 'a-anzartahum am lam tunzirhum laa yu'minuun"},
-        {no: 11, ar: "اِنَّمَا تُنۡذِرُ مَنِ اتَّبَعَ الذِّكۡرَ وَخَشِىَ الرَّحۡمٰنَ بِالۡغَيۡبِۚ فَبَشِّرۡهُ بِمَغۡفِرَةٍ وَّاَجۡرٍ كَرِيۡمٍ", lt: "Innamaa tunziru manit taba 'az-Zikra wa khashiyar Rahmaana bilghaib"},
-        {no: 12, ar: "اِنَّا نَحۡنُ نُحۡىِ الۡمَوۡتٰى وَنَكۡتُبُ مَا قَدَّمُوۡا وَاٰثَارَهُمۡؕؔ وَكُلَّ شَىۡءٍ اَحۡصَيۡنٰهُ فِىۡۤ اِمَامٍ مُّبِيۡنٍ", lt: "Innaa Nahnu nuhyil mawtaa wa naktubu maa qaddamuu wa aasaarahum"},
-        {no: 13, ar: "وَاضۡرِبۡ لَهُمۡ مَّثَلًا اَصۡحٰبَ الۡقَرۡيَةِ ‌ۘ اِذۡ جَآءَهَا الۡمُرۡسَلُوۡنَۚ", lt: "Wadrib lahum masalan Ashaabal Qaryatih"},
-        {no: 14, ar: "اِذۡ اَرۡسَلۡنَاۤ اِلَيۡهِمُ اثۡنَيۡنِ فَكَذَّبُوۡهُمَا فَعَزَّزۡنَا بِثَالِثٍ فَقَالُـوۡۤا اِنَّاۤ اِلَيۡكُمۡ مُّرۡسَلُوۡنَ", lt: "Iz arsalnaaa ilaihimusnaini fakazzabuuhumaa fa'azzaznaa bisaalisin"},
-        {no: 15, ar: "قَالُوۡا مَاۤ اَنۡـتُمۡ اِلَّا بَشَرٌ مِّthۡلُـنَا ۙ وَمَاۤ اَنۡزَلَ الرَّحۡمٰنُ مِنۡ شَىۡءٍۙ اِنۡ اَنۡـتُمۡ اِلَّا تَكۡذِبُوۡنَ", lt: "Qooluu maaa antum illaa basharum mislunaa"},
-        {no: 16, ar: "قَالُوۡا رَبُّنَا يَعۡلَمُ اِنَّاۤ اِلَيۡكُمۡ لَمُرۡسَلُوۡنَ", lt: "Qooluu Rabbunaa ya'lamu innaaa ilaikum lamursaluun"},
+        {no: 6, ar: "لِتُنۡذِرَ قَوۡمًا مَّاۤ اُنۡذِرَ اٰبَآؤُهُمۡ فَهُمۡ غٰفِلُوۡنَ", lt: "Litunzira qawmam maaa unzira aabaaa'uhum"},
+        {no: 7, ar: "لَقَدۡ حَقَّ الۡقَوۡلُ عَلٰٓى اَكۡثَرِهِمۡ فَهُمۡ لَا يُؤۡمِنُوۡنَ", lt: "Laqad haqqal qawlu 'alaaa aksarihim"},
+        {no: 8, ar: "اِنَّا جَعَلۡنَا فِىۡۤ اَعۡنَاقِهِمۡ اَغۡلٰلًا فَهِىَ اِلَى الۡاَ ذۡقَانِ فَهُمۡ مُّقۡمَحُوۡنَ", lt: "Innaa ja'alnaa fiii a'naaqihim aghlaalan"},
+        {no: 9, ar: "وَجَعَلۡنَا مِنۡۢ بَيۡنِ اَيۡدِيۡهِمۡ سَدًّا وَّمِنۡ خَلۡفِهِمۡ سَدًّا فَاَغۡشَيۡنٰهُمۡ فَهُمۡ لَا يُبۡصِرُوۡنَ", lt: "Wa ja'alnaa mim baini aydiihim saddan"},
+        {no: 10, ar: "وَسَوَآءٌ عَلَيۡهِمۡ ءَاَنۡذَرۡتَهُمۡ اَمۡ لَمۡ تُنۡذِرۡهُمۡ لَا يُؤۡمِنُوۡنَ", lt: "Wa sawaaa'un 'alaihim 'a-anzartahum"},
+        {no: 11, ar: "اِنَّمَا تُنۡذِرُ مَنِ اتَّبَعَ الذِّكۡرَ وَخَشِىَ الرَّحۡمٰنَ بِالۡغَيۡبِ", lt: "Innamaa tunziru manit taba 'az-Zikra"},
+        {no: 12, ar: "اِنَّا نَحۡنُ نُحۡىِ الۡمَوۡتٰى وَنَكۡتُبُ مَا قَدَّمُوۡا وَاٰثَارَهُمۡ", lt: "Innaa Nahnu nuhyil mawtaa"},
+        {no: 13, ar: "وَاضۡرِبۡ لَهُمۡ مَّثَلًا اَصۡحٰبَ الۡقَرۡيَةِ اِذۡ جَآءَهَا الۡمُرۡسَلُوۡنَ", lt: "Wadrib lahum masalan Ashaabal Qaryatih"},
+        {no: 14, ar: "اِذۡ اَرۡسَلۡنَاۤ اِلَيۡهِمُ اثۡنَيۡنِ فَكَذَّبُوۡهُمَا فَعَزَّزۡنَا بِثَالِثٍ", lt: "Iz arsalnaaa ilaihimusnaini fakazzabuuhumaa"},
+        {no: 15, ar: "قَالُوۡا مَاۤ اَنۡـتُمۡ اِلَّا بَشَرٌ مِّثۡلُـنَا", lt: "Qooluu maaa antum illaa basharum mislunaa"},
+        {no: 16, ar: "قَالُوۡا رَبُّنَا يَعۡلَمُ اِنَّاۤ اِلَيۡكُمۡ لَمُرۡسَلُوۡنَ", lt: "Qooluu Rabbunaa ya'lamu innaaa ilaikum"},
         {no: 17, ar: "وَمَا عَلَيۡنَاۤ اِلَّا الۡبَلٰغُ الۡمُبِيۡنُ", lt: "Wa maa 'alainaaa illal balaaghul mubiin"},
-        {no: 18, ar: "قَالُـوۡۤا اِنَّا تَطَيَّرۡنَا بِكُمۡۚ لَٮِٕنۡ لَّمۡ تَنۡتَهُوۡا لَنَرۡجُمَنَّكُمۡ وَلَيَمَسَّنَّكُمۡ مِّنَّا عَذَابٌ اَلِيۡمٌ", lt: "Qooluu innaa tataiyarnaa bikum la'il-lam tantahuu"},
-        {no: 19, ar: "قَالُوۡا طٰۤٮِٕـرُكُمۡ مَّعَكُمۡؕ اَٮِٕنۡ ذُكِّرۡتُمۡ ؕ بَلۡ اَنۡـتُمۡ قَوۡmٌ مُّسۡرِفُوۡنَ", lt: "Qooluu taaa'irukum ma'akum; a'in zukkirtum"},
-        {no: 20, ar: "وَجَآءَ مِنۡ اَقۡصَا الۡمَدِيۡنَةِ رَجُلٌ يَّسۡعٰى قَالَ يٰقَوۡمِ اتَّبِعُوا الۡمُرۡسَلِيۡنَۙ", lt: "Wa jaaa'a min aqsal madiinati rajuluny yas'aa"},
-        {no: 21, ar: "اتَّبِعُوۡا مَنۡ لَّا يَسۡــٴَــلُكُمۡ اَجۡرًا وَّهُمۡ مُّهۡتَدُوۡنَ", lt: "Ittabi'uu mal-laa yas'alukum ajranw-wa hum muhtaduun"},
+        {no: 18, ar: "قَالُـوۡۤا اِنَّا تَطَيَّرۡنَا بِكُمۡ لَٮِٕنۡ لَّmۡ تَنۡتَهُوۡا لَنَرۡجُمَنَّكُمۡ", lt: "Qooluu innaa tataiyarnaa bikum"},
+        {no: 19, ar: "قَالُوۡا طٰۤٮِٕـرُكُمۡ مَّعَكُمۡ اَٮِٕنۡ ذُكِّرۡتُمۡ", lt: "Qooluu taaa'irukum ma'akum"},
+        {no: 20, ar: "وَجَآءَ مِنۡ اَقۡصَا الۡمَدِيۡنَةِ رَجُلٌ يَّسۡعٰى قَالَ يٰقَوۡمِ اتَّبِعُوا الۡمُرۡسَلِيۡنَ", lt: "Wa jaaa'a min aqsal madiinati rajuluny"},
+        {no: 21, ar: "اتَّبِعُوۡا مَنۡ لَّا يَسۡــٴَــلُكُمۡ اَجۡرًا وَّهُمۡ مُّهۡتَدُوۡنَ", lt: "Ittabi'uu mal-laa yas'alukum ajran"},
         {no: 22, ar: "وَمَا لِىَ لَاۤ اَعۡبُدُ الَّذِىۡ فَطَرَنِىۡ وَاِلَيۡهِ تُرۡجَعُوۡنَ", lt: "Wa maa liya laaa a'budul lazii fataranii"},
-        {no: 23, ar: "ءَاَ تَّخِذُ مِنۡ دُوۡنِهٖۤ اٰلِهَةً اِنۡ يُّرِدۡنِ الرَّحۡمٰنُ بِضُرٍّ لَّa تُغۡنِ عَنِّىۡ شَفَاعَتُهُمۡ شَيۡـــًٔا وَّلَا يُنۡقِذُوۡنِ", lt: "'A-attakhizu min duunihiii aalihatan"},
+        {no: 23, ar: "ءَاَ تَّخِذُ مِنۡ دُوۡنِهٖۤ اٰلِهَةً اِنۡ يُّرِدۡنِ الرَّحۡمٰنُ بِضُرٍّ", lt: "'A-attakhizu min duunihiii aalihatan"},
         {no: 24, ar: "اِنِّىۡۤ اِذًا لَّفِىۡ ضَلٰلٍ مُّبِيۡنٍ", lt: "Inniii izal-lafii dalaa-lim-mubiin"},
-        {no: 25, ar: "اِنِّىۡۤ اٰمَنۡتُ بِرَبِّكُمۡ فَاسۡمَعُوۡنِؕ", lt: "Inniii aamantu bi Rabbikum fasma'uun"},
-        {no: 26, ar: "قِيۡلَ ادۡخُلِ الۡجَـنَّةَ ؕ قَالَ يٰلَيۡتَ قَوۡمِىۡ يَعۡلَمُوۡنَۙ", lt: "Qiilad khulil Jannnah; qoola yaa laita qawmii"},
-        {no: 27, ar: "بِمَا غَفَرَلِىۡ رَبِّىۡ وَجَعَلَنِىۡ مِنَ الۡمُكۡرَمِيۡنَ", lt: "Bimaa ghafara lii Rabbii wa ja'alanii minal mukramiin"},
-        {no: 28, ar: "وَمَاۤ اَنۡزَلۡنَا عَلٰى قَوۡمِهٖ مِنۡۢ بَعۡدِهٖ مِنۡ جُنۡدٍ مِّنَ السَّمَآءِ وَمَا كُـنَّا مُنۡزِلِيۡنَ", lt: "Wa maaa anzalnaa 'alaa qawmihii mim ba'dihii"},
+        {no: 25, ar: "اِنِّىۡۤ اٰمَنۡتُ بِرَبِّكُمۡ فَاسۡمَعُوۡنِ", lt: "Inniii aamantu bi Rabbikum fasma'uun"},
+        {no: 26, ar: "قِيۡلَ ادۡخُلِ الۡجَـنَّةَ قَالَ يٰلَيۡتَ قَوۡمِىۡ يَعۡلَمُوۡنَ", lt: "Qiilad khulil Jannnah"},
+        {no: 27, ar: "بِمَا غَفَرَلِىۡ رَبِّىۡ وَجَعَلَنِىۡ مِنَ الۡمُكۡرَمِيۡنَ", lt: "Bimaa ghafara lii Rabbii"},
+        {no: 28, ar: "وَمَاۤ اَنۡزَلۡنَا عَلٰى قَوۡمِهٖ مِنۡۢ بَعۡدِهٖ مِنۡ جُنۡدٍ", lt: "Wa maaa anzalnaa 'alaa qawmihii"},
         {no: 29, ar: "اِنۡ كَانَتۡ اِلَّا صَيۡحَةً وَّاحِدَةً فَاِذَا هُمۡ خٰمِدُوۡنَ", lt: "In kaanat illaa saihatanw waahidatan"},
-        {no: 30, ar: "يٰحَسۡرَةً عَلَى الۡعِبَادِ ؔ‌ۚ مَا يَاۡتِيۡهِمۡ مِّنۡ رَّسُوۡلٍ اِلَّا كَانُوۡا بِهٖ يَسۡتَهۡزِءُوۡنَ", lt: "Yaa hasratan 'alal 'ibaad"},
-        {no: 31, ar: "اَلَمۡ يَرَوۡا كَمۡ اَهۡلَـكۡنَا قَبۡلَهُمۡ مِّنَ الۡقُرُوۡنِ اَنَّهُمۡ اِلَيۡهِمۡ لَا يَرۡجِعُوۡنَؕ", lt: "Alam yaraw kam ahlak naa qablahum"},
-        {no: 32, ar: "وَاِنۡ كُلٌّ لَّمَّا جَمِيۡعٌ لَّدَيۡنَا مُحۡضَرُوۡنَ", lt: "Wa in kullul lammaa jamii'ul-ladainaa muhdaruun"},
-        {no: 33, ar: "وَاٰيَةٌ لَّهُمُ الۡاَرۡضُ الۡمَيۡتَةُ ۖۚ اَحۡيَيۡنٰهَا وَاَخۡرَجۡنَا مِنۡهَا حَبًّا فَمِنۡهُ يَاۡكُلُوۡنَ", lt: "Wa Aayatul lahumul ardul maitatu ahyainaahaa"},
-        {no: 34, ar: "وَجَعَلۡنَا فِيۡهَا جَنّٰتٍ مِّنۡ نَّخِيۡلٍ وَّاَعۡنَابٍ وَّفَجَّرۡنَا فِيۡهَا مِنَ الۡعُيُوۡنِۙ", lt: "Wa ja'alnaa fiihaa jannaatim min nakhiilin"},
-        {no: 35, ar: "لِيَاۡكُلُوۡا مِنۡ ثَمَرِهٖ ۙ وَمَا عَمِلَـتۡهُ اَيۡدِيۡهِمۡ‌ ؕ اَفَلَا يَشۡكُرُوۡنَ", lt: "Liyaakuluu min samarihii wa maa 'amilat-hu aidiihim"},
-        {no: 36, ar: "سُبۡحٰنَ الَّذِىۡ خَلَقَ الۡاَزۡوَاجَ كُلَّهَا مِمَّا تُنۡۢبِتُ الۡاَرۡضُ وَمِنۡ اَنۡفُسِهِمۡ", lt: "Subhaanal lazii khalaqal azwaaja kullahaa"},
-        {no: 37, ar: "وَاٰيَةٌ lَّهُمُ الَّيۡلُ ۖۚ نَسۡلَخُ مِنۡهُ النَّهَارَ فَاِذَا هُمۡ مُّظۡلِمُوۡنَۙ", lt: "Wa Aayatul lahumul lailu naslakhu minhun nahaara"},
-        {no: 38, ar: "وَالشَّمۡسُ تَجۡرِىۡ لِمُسۡتَقَرٍّ لَّهَا ‌ؕ ذٰلِكَ تَقۡدِيۡرُ الۡعَزِيۡزِ الۡعَلِيۡمِؕ", lt: "Wash-shamsu tajrii limustaqarril lahaa"},
-        {no: 39, ar: "وَالۡقَمَرَ قَدَّرۡنٰهُ مَنَازِلَ حَتّٰى عَادَ كَالۡعُرۡجُوۡنِ الۡقَدِيۡمِ", lt: "Walqamara qaddarnaahu manaazila"},
-        {no: 40, ar: "لَا الشَّمۡسُ يَنۡۢبَغِىۡ لَهَاۤ اَنۡ تُدۡرِكَ الۡقَمَرَ وَلَا الَّيۡلُ سَابِقُ النَّهارِ", lt: "Lash shamsu yambaghii lahaaa an tudrikal qamara"}
-	{no: 41, ar: "وَاٰيَةٌ لَّهُمۡ اَنَّا حَمَلۡنَا ذُرِّيَّتَهُمۡ فِى الۡفُلۡكِ الۡمَشۡحُوۡنِۙ", lt: "Wa Aayatul lahum annaa hamalnaa zurriyatahum"},
-        {no: 42, ar: "وَخَلَقۡنَا لَهُمۡ مِّنۡ مِّثۡلِهٖ مَا يَرۡكَبُوۡنَ", lt: "Wa khalaqnaa lahum mim-mislihii maa yarkabuun"},
-        {no: 43, ar: "وَاِنۡ نَّشَاۡ نُغۡرِقۡهُمۡ فَلَا صَرِيۡخَ لَهُمۡ وَلَا هُمۡ يُنۡقِذُوۡنَۙ", lt: "Wa in nashaa nughriqhum falaa sariikha lahum"},
-        {no: 44, ar: "اِلَّا رَحۡمَةً مِّنَّا وَمَتَاعًا اِلٰى حِيۡنٍ", lt: "Illaa rahmatam minnaa wa mataa'an ilaa hiin"},
-        {no: 45, ar: "وَاِذَا قِيۡلَ لَهُمُ اتَّقُوۡا مَا بَيۡنَ اَيۡدِيۡكُمۡ وَمَا خَلۡفَكُمۡ لَعَلَّكُمۡ تُرۡحَمُوۡنَ", lt: "Wa izaa qiila lahumuttaquu maa baina aidiikum"},
-        {no: 46, ar: "وَمَا تَاۡتِيۡهِمۡ مِّنۡ اٰيَةٍ مِّنۡ اٰيٰتِ رَبِّهِمۡ اِلَّا كَانُوۡا عَنۡهَا مُعۡرِضِيۡنَ", lt: "Wa maa taatiihim min aayatim min ayataati Rabbihim"},
-        {no: 47, ar: "وَاِذَا قِيۡلَ لَهُمۡ اَنۡفِقُوۡا مِمَّا رَزَقَكُمُ اللّٰهُ ۙ", lt: "Wa izaa qiila lahum anfiquu mimmaa razaqakumul laah"},
-        {no: 48, ar: "وَيَقُوۡلُوۡنَ مَتٰى هٰذَا الۡوَعۡدُ اِنۡ كُنۡتُمۡ صٰدِقِيۡنَ", lt: "Wa yaquuluuna mataa haazal wa'du in kuntum saadiqiin"},
-        {no: 49, ar: "مَا يَنۡظُرُوۡنَ اِلَّا صَيۡحَةً وَّاحِدَةً تَاۡخُذُهُمۡ وَهُمۡ يَخِصِّmُوۡنَ", lt: "Maa yanzuruuna illaa saihatanw waahidatan"},
-        {no: 50, ar: "فَلَا يَسۡتَطِيۡعُوۡنَ تَوۡصِيَةً وَّلَاۤ اِلٰٓى اَهۡلِهِمۡ يَرۡجِعُوۡنَ", lt: "Falaa yastatii'uuna taw siyatanw"},
-        {no: 51, ar: "وَنُفِخَ فِى الصُّوۡرِ فَاِذَا هُمۡ مِّنَ الۡاَجۡدَاثِ اِلٰى رَبِّهِمۡ يَنۡسِلُوۡنَ", lt: "Wa nufikha fis-suuri faizaa hum minal ajdaasi"},
-        {no: 52, ar: "قَالُوۡا يٰوَيۡلَنَا مَنۡۢ بَعَثَنَا مِنۡ مَّرۡقَدِنَاۘؔ هٰذَا مَا وَعَدَ الرَّحۡمٰنُ وَصَدَقَ الۡمُرۡسَلُوۡنَ", lt: "Qooluu yaa wailanaa mam ba'asanaa"},
-        {no: 53, ar: "اِنۡ كَانَتۡ اِلَّا صَيۡحَةً وَّاحِدَةً فَاِذَا هُمۡ جَمِيۡعٌ لَّدَيۡنَا مُحۡضَرُوۡنَ", lt: "In kaanat illaa saihatanw waahidatan"},
-        {no: 54, ar: "فَالۡيَوۡmَ لَا تُظۡلَمُ نَفۡسٌ شَيۡـــًٔا وَّلَا تُجۡزَوۡنَ اِلَّا مَا كُنۡتُمۡ تَعۡمَلُوۡنَ", lt: "Fal-Yawma laa tuzlamu nafsun shai'anw"},
-        {no: 55, ar: "اِنَّ اَصۡحٰبَ الۡجَـنَّةِ الۡيَوۡمَ فِىۡ شُغُلٍ فٰكِهُوۡنَ", lt: "Inna Ashaabal jannatil Yawma fii shughulin"},
-        {no: 56, ar: "هُمۡ وَاَزۡوَاجُهُمۡ فِىۡ ظِلٰلٍ عَلَى الۡاَرَآٮِٕكِ مُتَّكِـــُٔوۡنَ", lt: "Hum wa azwaajuhum fii zilaalin"},
-        {no: 57, ar: "لَهُمۡ فِيۡهَا فَاكِهَةٌ وَّلَهُمۡ مَّا يَدَّعُوۡنَ", lt: "Lahum fiihaa faakiha tunw-wa lahum maa yadda'uun"},
+        {no: 30, ar: "يٰحَسۡرَةً عَلَى الۡعِبَادِ مَا يَاۡتِيۡهِمۡ مِّنۡ رَّسُوۡلٍ", lt: "Yaa hasratan 'alal 'ibaad"},
+        {no: 31, ar: "اَلَمۡ يَرَوۡا كَمۡ اَهۡلَـكۡنَا قَبۡلَهُمۡ مِّنَ الۡقُرُوۡنِ", lt: "Alam yaraw kam ahlak naa qablahum"},
+        {no: 32, ar: "وَاِنۡ كُلٌّ لَّمَّا جَمِيۡعٌ لَّدَيۡنَا مُحۡضَرُوۡنَ", lt: "Wa in kullul lammaa jamii'ul-ladainaa"},
+        {no: 33, ar: "وَاٰيَةٌ لَّهُمُ الۡاَرۡضُ الۡمَيۡتَةُ اَحۡيَيۡنٰهَا", lt: "Wa Aayatul lahumul ardul maitatu"},
+        {no: 34, ar: "وَجَعَلۡنَا فِيۡهَا جَنّٰتٍ مِّنۡ نَّخِيۡلٍ وَّاَعۡنَابٍ", lt: "Wa ja'alnaa fiihaa jannaatim"},
+        {no: 35, ar: "لِيَاۡكُلُوۡا مِنۡ ثَمَرِهٖ وَمَا عَمِلَـتۡهُ اَيۡدِيۡهِمۡ", lt: "Liyaakuluu min samarihii"},
+        {no: 36, ar: "سُبۡحٰنَ الَّذِىۡ خَلَقَ الۡاَزۡوَاجَ كُلَّهَا", lt: "Subhaanal lazii khalaqal azwaaja"},
+        {no: 37, ar: "وَاٰيَةٌ لَّهُمُ الَّيۡلُ نَسۡلَخُ مِنۡهُ النَّهَارَ", lt: "Wa Aayatul lahumul lailu naslakhu"},
+        {no: 38, ar: "وَالشَّمۡسُ تَجۡرِىۡ لِمُسۡتَقَرٍّ لَّهَا ذٰلِكَ تَقۡدِيۡرُ", lt: "Wash-shamsu tajrii limustaqarril lahaa"},
+        {no: 39, ar: "وَالۡقَمَرَ قَدَّرۡنٰهُ مَنَازِلَ حَتّٰى عَادَ كَالۡعُرۡجُوۡنِ", lt: "Walqamara qaddarnaahu manaazila"},
+        {no: 40, ar: "لَا الشَّمۡسُ يَنۡۢبَغِىۡ لَهَاۤ اَنۡ تُدۡرِكَ الۡقَمَرَ", lt: "Lash shamsu yambaghii lahaaa"},
+        {no: 41, ar: "وَاٰيَةٌ لَّهُمۡ اَنَّا حَمَلۡنَا ذُرِّيَّتَهُمۡ", lt: "Wa Aayatul lahum annaa hamalnaa"},
+        {no: 42, ar: "وَخَلَقۡنَا لَهُمۡ مِّنۡ مِّثۡلِهٖ مَا يَرۡكَبُوۡنَ", lt: "Wa khalaqnaa lahum mim-mislihii"},
+        {no: 43, ar: "وَاِنۡ نَّشَاۡ نُغۡرِقۡهُمۡ فَلَا صَرِيۡخَ لَهُمۡ", lt: "Wa in nashaa nughriqhum"},
+        {no: 44, ar: "اِلَّا رَحۡمَةً مِّنَّا وَمَتَاعًا اِلٰى حِيۡنٍ", lt: "Illaa rahmatam minnaa"},
+        {no: 45, ar: "وَاِذَا قِيۡلَ لَهُمُ اتَّقُوۡا مَا بَيۡنَ اَيۡدِيۡكُمۡ", lt: "Wa izaa qiila lahumuttaquu"},
+        {no: 46, ar: "وَمَا تَاۡتِيۡهِمۡ مِّنۡ اٰيَةٍ مِّنۡ اٰيٰتِ رَبِّهِمۡ", lt: "Wa maa taatiihim min aayatim"},
+        {no: 47, ar: "وَاِذَا قِيۡلَ لَهُمۡ اَنۡفِقُوۡا مِمَّا رَزَقَكُمُ اللّٰهُ", lt: "Wa izaa qiila lahum anfiquu"},
+        {no: 48, ar: "وَيَقُوۡلُوۡنَ مَتٰى هٰذَا الۡوَعۡدُ", lt: "Wa yaquuluuna mataa haazal wa'du"},
+        {no: 49, ar: "مَا يَنۡظُرُوۡنَ اِلَّا صَيۡحَةً وَّاحِدَةً تَاۡخُذُهُمۡ", lt: "Maa yanzuruuna illaa saihatanw"},
+        {no: 50, ar: "فَلَا يَسۡتَطِيۡعُوۡنَ تَوۡصِيَةً وَّلَاۤ اِلٰٓى اَهۡلِهِمۡ", lt: "Falaa yastatii'uuna taw siyatanw"},
+        {no: 51, ar: "وَنُفِخَ فِى الصُّوۡرِ فَاِذَا هُمۡ مِّنَ الۡاَجۡدَاثِ", lt: "Wa nufikha fis-suuri faizaa hum"},
+        {no: 52, ar: "قَالُوۡا يٰوَيۡلَنَا مَنۡۢ بَعَثَنَا مِنۡ مَّرۡقَدِنَا", lt: "Qooluu yaa wailanaa mam ba'asanaa"},
+        {no: 53, ar: "اِنۡ كَانَتۡ اِلَّا صَيۡحَةً وَّاحِدَةً", lt: "In kaanat illaa saihatanw waahidatan"},
+        {no: 54, ar: "فَالۡيَوۡمَ لَا تُظۡلَمُ نَفۡسٌ شَيۡـــًٔا", lt: "Fal-Yawma laa tuzlamu nafsun"},
+        {no: 55, ar: "اِنَّ اَصۡحٰبَ الۡجَـنَّةِ الۡيَوۡمَ فِىۡ شُغُلٍ", lt: "Inna Ashaabal jannatil Yawma"},
+        {no: 56, ar: "هُمۡ وَاَزۡوَاجُهُمۡ فِىۡ ظِلٰلٍ عَلَى الۡاَرَآٮِٕكِ", lt: "Hum wa azwaajuhum fii zilaalin"},
+        {no: 57, ar: "لَهُمۡ فِيۡهَا فَاكِهَةٌ وَّلَهُمۡ مَّا يَدَّعُوۡنَ", lt: "Lahum fiihaa faakiha tunw"},
         {no: 58, ar: "سَلٰمٌ قَوۡلًا مِّنۡ رَّبٍّ رَّحِيۡمٍ", lt: "Salaamun qawlam mir Rabbir Rahiim"},
         {no: 59, ar: "وَامۡتَازُوا الۡيَوۡمَ اَيُّهَا الۡمُجۡرِمُوۡنَ", lt: "Wamtaazul Yawma ayyuhal mujrimuun"},
-        {no: 60, ar: "اَلَمۡ اَعۡهَدۡ اِلَيۡكُمۡ يٰبَنِىۡۤ اٰدَمَ اَنۡ لَّا تَعۡبُدُوا الشَّيۡطٰنَ", lt: "Alam a'had ilaikum yaa Baniii Aadama"},
-        {no: 61, ar: "وَّاَنِ اعۡبُدُوۡنِىۡ ؔ‌ؕ هٰذَا صِرَاطٌ مُّسۡتَقِيۡمٌ", lt: "Wa ani'buduunii; haazaa Siraatum Mustaqiim"},
-        {no: 62, ar: "وَلَقَدۡ اَضَلَّ مِنۡكُمۡ جِبِلًّا كَthِيۡرًا‌ ؕ اَفَلَمۡ تَكُوۡنُوۡا تَعۡقِلُوۡنَ", lt: "Wa laqad adalla minkum jibillan kasiiraa"},
-        {no: 63, ar: "هٰذِهٖ جَهَنَّمُ الَّتِىۡ كُنۡتُمۡ تُوۡعَدُوۡنَ", lt: "Haazihii Jahannamul latii kuntum tuu'aduun"},
-        {no: 64, ar: "اِصۡلَوۡهَا الۡيَوۡمَ بِمَا كُنۡتُمۡ تَكۡفُرُوۡنَ", lt: "Islawhal Yawma bimaa kuntum takfuruun"},
-        {no: 65, ar: "اَلۡيَوۡمَ نَخۡتِمُ عَلٰٓى اَفۡوَاهِهِمۡ وَتُكَلِّمُنَاۤ اَيۡدِيۡهِمۡ", lt: "Al-Yawma nakhtimu 'alaaa afwaahihim"},
-        {no: 66, ar: "وَلَوۡ نَشَآءُ لَـطَمَسۡنَا عَلٰٓى اَعۡيُنِهِمۡ فَاسۡتَبَقُوا الصِّرَاطَ", lt: "Wa law nashaaa'u lata masna 'alaaa aiyunihim"},
+        {no: 60, ar: "اَلَمۡ اَعۡهَدۡ اِلَيۡكُمۡ يٰبَنِىۡۤ اٰدَمَ", lt: "Alam a'had ilaikum yaa Baniii"},
+        {no: 61, ar: "وَّاَنِ اعۡبُدُوۡنِىۡ هٰذَا صِرَاطٌ مُّسۡتَقِيۡمٌ", lt: "Wa ani'buduunii; Siraatum Mustaqiim"},
+        {no: 62, ar: "وَلَقَدۡ اَضَلَّ مِنۡكُمۡ جِبِلًّا كَثِيۡرًا", lt: "Wa laqad adalla minkum jibillan"},
+        {no: 63, ar: "هٰذِهٖ جَهَنَّمُ الَّتِىۡ كُنۡتُمۡ تُوۡعَدُوۡنَ", lt: "Haazihii Jahannamul latii kuntum"},
+        {no: 64, ar: "اِصۡلَوۡهَا الۡيَوۡمَ بِمَا كُنۡتُمۡ تَكۡفُرُوۡنَ", lt: "Islawhal Yawma bimaa kuntum"},
+        {no: 65, ar: "اَلۡيَوۡمَ نَخۡتِمُ عَلٰٓى اَفۡوَاهِهِمۡ", lt: "Al-Yawma nakhtimu 'alaaa"},
+        {no: 66, ar: "وَلَوۡ نَشَآءُ لَـطَمَسۡنَا عَلٰٓى اَعۡيُنِهِمۡ", lt: "Wa law nashaaa'u lata masna"},
         {no: 67, ar: "وَلَوۡ نَشَآءُ لَمَسَخۡنٰهُمۡ عَلٰى مَكَانَتِهِمۡ", lt: "Wa law nashaaa'u lamasakhnaahum"},
-        {no: 68, ar: "وَمَنۡ نُّعَمِّرۡهُ نُـنَكِّسۡهُ فِى الۡخَـلۡقِ‌ؕ اَفَلَا يَعۡقِلُوۡنَ", lt: "Wa man nu 'ammirhu nunakkishu fil-khalq"},
-        {no: 69, ar: "وَمَا عَلَّمۡنٰهُ الشِّعۡرَ وَمَا يَنۡۢبَغِىۡ لَهٗؕ", lt: "Wa maa 'allamnaahush shi'ra wa maa yambaghii lah"},
-        {no: 70, ar: "لِّيُنۡذِرَ مَنۡ كَانَ حَيًّا وَّيَحِقَّ الۡقَوۡلُ عَلَى الۡكٰفِرِيۡنَ", lt: "Liyunzira man kaana haiyanw-wa yahiqqal qawlu"},
-        {no: 71, ar: "اَوَلَمۡ يَرَوۡا اَنَّا خَلَقۡنَا لَهُمۡ مِّمَّا عَمِلَتۡ اَيۡدِيۡنَاۤ اَنۡعَامًا", lt: "Awalam yaraw annaa khalaqnaa lahum"},
-        {no: 72, ar: "وَذَلَّـلۡنٰهَا لَهُمۡ فَمِنۡهَا رَكُوۡبُهُمۡ وَمِنۡهَا يَاۡكُلُوۡنَ", lt: "Wa zallalnaahaa lahum faminhaa rakuubuhum"},
-        {no: 73, ar: "وَلَهُمۡ فِيۡهَا مَنَافِعُ وَمَشَارِبُ‌ؕ اَفَلَا يَشۡكُرُوۡنَ", lt: "Wa lahum fiihaa manaa fi'u wa mashaarib"},
-        {no: 74, ar: "وَاتَّخَذُوۡا مِنۡ dُوۡنِ اللّٰهِ اٰلِهَةً لَّعَلَّهُمۡ يُنۡصَرُوۡنَ", lt: "Wattakhazuu min duunil laahi aalihatal"},
-        {no: 75, ar: "لَا يَسۡتَطِيۡعُوۡنَ نَصۡرَهُمۡۙ وَهُمۡ لَهُمۡ جُنۡدٌ مُّحۡضَرُوۡنَ", lt: "Laa yastatii'uuna nasrahum wa hum lahum"},
-        {no: 76, ar: "فَلَا يَحۡزُنۡكَ قَوۡلُهُمۡ‌ۘ اِنَّا نَـعۡلَمُ مَا يُسِرُّوۡنَ وَمَا يُعۡلِنُوۡنَ", lt: "Falaa yahzunka qawluhum; innaa na'lamu"},
-        {no: 77, ar: "اَوَلَمۡ يَرَ الۡاِنۡسَانُ اَنَّا خَلَقۡنٰهُ مِنۡ نُّطۡفَةٍ فَاِذَا هُوَ خَصِيۡمٌ مُّبِيۡنٌ", lt: "Awalam yaral insaanu annaa khalaqnaahu"},
-        {no: 78, ar: "وَضَرَبَ لَـنَا مَثَلًا وَّ نَسِىَ خَلۡقَهٗ‌ ؕ قَالَ مَنۡ يُّحۡىِ الۡعِظَامَ وَهِىَ رَمِيۡمٌ", lt: "Wa daraba lanaa maslanw-wa nasiya khalqahuu"},
-        {no: 79, ar: "قُلۡ يُحۡيِيۡهَا الَّذِىۡۤ اَنۡشَاَهَاۤ اَوَّلَ مَرَّةٍ‌ ؕ وَهُوَ بِكُلِّ خَلۡقٍ عَلِيۡمُ", lt: "Qul yuh yiihal laziii ansha ahaaa"},
-        {no: 80, ar: "اۨلَّذِىۡ جَعَلَ لَـكُمۡ مِّنَ الشَّجَرِ الۡاَخۡضَرِ نَارًا فَاِذَاۤ اَنۡـتُمۡ مِّنۡهُ تُوۡقِدُوۡنَ", lt: "Allazii ja'ala lakum minash shajaril akhdari"},
-        {no: 81, ar: "اَوَلَيۡسَ الَّذِىۡ خَلَقَ السَّمٰوٰتِ وَالۡاَرۡضَ بِقٰدِرٍ عَلٰٓى اَنۡ يَّخۡلُقَ مِthۡلَهُمۡ", lt: "Awa laisal lazii khalaqas samaawaati"},
-        {no: 82, ar: "اِنَّمَاۤ اَمۡرُهٗۤ اِذَاۤ اَرَادَ شَیْــٴً۬ــا اَنۡ يَّقُوۡلَ لَهٗ كُنۡ فَيَكُوۡنُ", lt: "Innamaa amruhuuu izaaa araada shai'an"},
-        {no: 83, ar: "فَسُبۡحٰنَ الَّذِىۡ بِيَدِهٖ مَلَـكُوۡتُ كُلِّ شَىۡءٍ وَّاِلَيۡهِ تُرۡجَعُوۡنَ", lt: "Fa Subhaanal lazii biyadihii malakuutu kulli shai-inw"}
+        {no: 68, ar: "وَمَنۡ نُّعَمِّرۡهُ نُـنَكِّسۡهُ فِى الۡخَـلۡقِ", lt: "Wa man nu 'ammirhu nunakkishu"},
+        {no: 69, ar: "وَمَا عَلَّمۡنٰهُ الشِّعۡرَ وَما يَنۢبَغِى لَهٗ", lt: "Wa maa 'allamnaahush shi'ra"},
+        {no: 70, ar: "لِّيُنۡذِرَ مَنۡ كَانَ حَيًّا وَّيَحِقَّ الۡقَوۡلُ", lt: "Liyunzira man kaana haiyanw"},
+        {no: 71, ar: "اَوَلَمۡ يَرَوۡا اَنَّا خَلَقۡنَا لَهُمۡ مِّمَّا عَمِلَتۡ", lt: "Awalam yaraw annaa khalaqnaa"},
+        {no: 72, ar: "وَذَلَّـلۡنٰهَا لَهُمۡ فَمِنۡهَا رَكُوۡبُهُمۡ", lt: "Wa zallalnaahaa lahum"},
+        {no: 73, ar: "وَلَهُمۡ فِيۡهَا مَنَافِعُ وَمَشَارِبُ", lt: "Wa lahum fiihaa manaa fi'u"},
+        {no: 74, ar: "وَاتَّخَذُوۡا مِنۡ دُوۡنِ اللّٰهِ اٰلِهَةً", lt: "Wattakhazuu min duunil laahi"},
+        {no: 75, ar: "لَا يَسۡتَطِيۡعُوۡنَ نَصۡرَهُمۡ", lt: "Laa yastatii'uuna nasrahum"},
+        {no: 76, ar: "فَلَا يَحۡزُنۡكَ قَوۡلُهُمۡ اِنَّا نَـعۡلَمُ", lt: "Falaa yahzunka qawluhum"},
+        {no: 77, ar: "اَوَلَمۡ يَرَ الۡاِنۡسَانُ اَنَّا خَلَقۡنٰهُ", lt: "Awalam yaral insaanu annaa"},
+        {no: 78, ar: "وَضَرَبَ لَـنَا مَثَلًا وَّ نَسِىَ خَلۡقَهٗ", lt: "Wa daraba lanaa maslanw"},
+        {no: 79, ar: "قُلۡ يُحۡيِيۡهَا الَّذِىۡۤ اَنۡشَاَهَاۤ", lt: "Qul yuh yiihal laziii ansha"},
+        {no: 80, ar: "اۨلَّذِىۡ جَعَلَ لَـكُمۡ مِّنَ الشَّجَرِ الۡاَخۡضَرِ", lt: "Allazii ja'ala lakum minash"},
+        {no: 81, ar: "اَوَلَيۡسَ الَّذِىۡ خَلَقَ السَّمٰوٰتِ", lt: "Awa laisal lazii khalaqas"},
+        {no: 82, ar: "اِنَّمَاۤ اَمۡرُهٗۤ اِذَاۤ اَرَادَ شَیْــٴً۬ــا", lt: "Innamaa amruhuuu izaaa araada"},
+        {no: 83, ar: "فَسُبۡحٰنَ الَّذِىۡ بِيَدِهٖ مَلَـكُوۡتُ كُلِّ شَىۡءٍ", lt: "Fa Subhaanal lazii biyadihii"}
     ];
-    // Bro, ayat di atas gua list ringkas buat simulasi, lu tinggal copas data ayat lu.
-    // Tapi karena chat ada limit karakter, pas lu copas, pastiin SEMUA ayat masuk ke list "yasinData" ini.
 
     const listDiv = document.getElementById('yasin-list');
+    
+    // Render semua ayat
     yasinData.forEach(item => {
-        listDiv.innerHTML += `
-            <div class="yasin-item">
-                <div class="yasin-no">${item.no}</div>
-                <div class="yasin-arab">${item.ar}</div>
-                <div class="yasin-latin">${item.lt}</div>
-            </div>`;
+        const div = document.createElement('div');
+        div.className = 'yasin-item';
+        div.innerHTML = `
+            <div class="yasin-no">${item.no}</div>
+            <div class="yasin-arab">${item.ar}</div>
+            <div class="yasin-latin">${item.lt}</div>
+        `;
+        listDiv.appendChild(div);
     });
 
     function toggleYasin() {
-        var x = document.getElementById("yasin-content");
-        x.style.display = (x.style.display === "block") ? "none" : "block";
+        const content = document.getElementById("yasin-content");
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+        }
     }
 </script>
 </body>
