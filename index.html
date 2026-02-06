@@ -5,109 +5,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOA UNTUK BAPAK</title>
     <style>
-        :root { --bg: #000000; --card: #161616; --text: #e0e0e0; --primary: #4caf50; --accent: #ffd54f; }
+        :root { --bg: #000000; --card: #161616; --text: #e0e0e0; --primary: #4caf50; --accent: #ffd54f; --border: #333; }
         body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg); margin: 0; padding: 0; color: var(--text); line-height: 1.6; }
-        header { background: #000; color: var(--primary); padding: 20px; text-align: center; position: sticky; top: 0; z-index: 100; border-bottom: 2px solid var(--primary); }
+        header { background: #000; color: var(--primary); padding: 20px; text-align: center; position: sticky; top: 0; z-index: 100; border-bottom: 2px solid var(--primary); box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
         .container { padding: 15px; max-width: 650px; margin: auto; }
-        .card { background: var(--card); padding: 20px; border-radius: 12px; margin-bottom: 20px; border: 1px solid #333; }
-        h2 { border-bottom: 1px solid var(--primary); padding-bottom: 8px; color: var(--primary); font-size: 1.1rem; text-transform: uppercase; margin-top: 0; margin-bottom: 15px; }
-        .latin-bold { font-weight: bold; color: #fff; font-size: 1.1rem; margin: 10px 0; }
+        .card { background: var(--card); padding: 20px; border-radius: 12px; margin-bottom: 20px; border: 1px solid var(--border); }
+        h2 { border-bottom: 1px solid var(--primary); padding-bottom: 8px; color: var(--primary); font-size: 1.1rem; text-transform: uppercase; margin-top: 0; }
+        h3 { font-size: 1rem; color: var(--accent); margin-top: 15px; border-left: 4px solid var(--accent); padding-left: 10px; }
+        .bismillah { font-size: 2.2rem; text-align: center; margin: 20px 0; font-family: serif; color: #fff; }
+        .latin { font-weight: 500; color: #fff; margin-bottom: 8px; font-size: 1.1rem; }
+        .sunda { font-style: italic; background: #0d1b2a; padding: 15px; border-radius: 8px; color: #e0e0e0; border-left: 5px solid var(--primary); line-height: 1.8; }
         
-        /* Kolom Silsilah */
-        .khususon-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        /* Layout Khususon */
+        .khususon-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 10px; }
         .silsilah-box { background: #1a1a1a; padding: 10px; border-radius: 8px; border: 1px dashed #444; }
-        .silsilah-box h3 { font-size: 0.9rem; color: var(--primary); margin: 0 0 10px 0; text-align: center; border-bottom: 1px solid #333; }
-        .name-list { font-size: 0.85rem; color: var(--accent); font-weight: bold; line-height: 1.8; }
+        .silsilah-list { line-height: 1.8; font-weight: bold; color: var(--accent); font-size: 0.9rem; }
 
-        .sunda { font-style: italic; background: #0d1b2a; padding: 15px; border-radius: 8px; border-left: 5px solid var(--primary); margin: 15px 0; color: #fff; }
-        .btn-yasin { display: block; width: 100%; padding: 20px; background: var(--primary); color: white; text-align: center; border-radius: 12px; font-weight: bold; font-size: 1.2rem; margin: 20px 0; cursor: pointer; border: none; }
+        .btn-yasin { display: block; width: 100%; padding: 20px; background: var(--primary); color: white; text-align: center; border-radius: 12px; font-weight: bold; font-size: 1.2rem; margin: 20px 0; cursor: pointer; border: none; box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3); }
         
-        #yasin-content { display: none; background: #111; padding: 15px; border-radius: 10px; border: 1px solid var(--primary); margin-bottom: 20px; }
-        .yasin-item { border-bottom: 1px solid #222; padding: 10px 0; }
-        .yasin-latin { color: var(--accent); font-style: italic; font-size: 1.1rem; line-height: 1.4; }
-        .yasin-no { color: var(--primary); font-weight: bold; font-size: 0.9rem; margin-right: 10px; }
+        /* Yasin Latin Only Styling */
+        #yasin-content { display: none; background: #000; padding: 15px; border-radius: 10px; border: 1px solid var(--primary); margin-top: 10px; }
+        .yasin-item { border-bottom: 1px solid #222; padding: 12px 0; display: flex; align-items: flex-start; }
+        .yasin-no { color: var(--primary); font-weight: bold; min-width: 35px; font-size: 1rem; }
+        .yasin-latin-text { color: var(--accent); font-style: italic; font-size: 1.1rem; line-height: 1.5; }
+
+        footer { text-align: center; padding: 40px 20px; color: #555; font-size: 0.8rem; }
+        .highlight { color: var(--primary); font-weight: bold; }
+        hr { border: 0; border-top: 1px solid #333; margin: 15px 0; }
     </style>
 </head>
 <body>
 
 <header>
-    <div style="font-size: 1.4rem; font-weight: bold;">DOA UNTUK BAPAK</div>
+    <div style="font-size: 1.4rem; font-weight: bold; letter-spacing: 2px;">DOA UNTUK BAPAK</div>
 </header>
 
 <div class="container">
+
     <div class="card">
-        <p class="latin-bold">BISMIILAAHIR RAHMAANIR RAHIIM</p>
-        <p class="latin-bold">ASTAGFIRULLAH ALAZIM 3X</p>
-        <p>1. ILA HADROTIN NABIYYIL MUSTHOFA SAYYIDINA MUHAMMADIN S.A.W WA 'ALA ALIHI WA ASHABIHI WA AZWAJIHI WA DZURRIYATIHI WA AHLI BAITIHI KROM... ALFATIHAH</p>
-        <p>2. WA ILA ARWAHI ABA IHI WA IKHWANIHI MINAL ANBIYAI WAL MURSALIN WA ILA MALAIKATIL MUQORROBIN WA KARUBIYYIN WAS SYUHADAI WAS SHOLIHIN... ALFATIHAH</p>
-        <p>3. WA SUMA ILA ARWAHI SEH ABDUL KODIR JAELANI WA SEH JUNAIDIL BAGDADI WA SEH SYARIF HIDAYATULLAH WA JAMI'IL AULIAI ALLAH... ALFATIHAH</p>
+        <div class="bismillah">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+        <p class="latin">ASTAGFIRULLAH ALAZIM (3X)</p>
+        <p class="latin">ALAZILAILAHAILAHUWALHAYULQOYUM WAATUBU ILAIHI</p>
+        <p class="latin">ASHADU ALA ILAHA ILALLAH WAASHADUANA MUHAMMADAR ROSULULLAH</p>
     </div>
 
     <div class="card">
-        <h2>KHUSUSON BIN & BINTI</h2>
+        <h2>1. HADIAT (TAWASUL)</h2>
+        <p class="latin">1. ILA HADROTIN NABI MUHAMMADIN SHALLALLAHU ALAIHI WASALLAM WA’ALA ALIHI WA’AZWAZIHI WAZURIATIHI WA AHLI BAITIHI KIROMI SAI’UL LILAHI LAHUM <span class="highlight">ALFATIHAH...</span></p>
+        <hr>
+        <p class="latin">2. WA ILA ARWAHI ABA IHI WA IKHWANIHI MINAL AMBIYA’I WALMURSALIN. WA ALI HULI MINHUM WA SOHDIHIN AZMAIN, HUSUSON AL HULAPA’I ROSIDDIN, SADATINA ABI BAKRI WA UMAR WA USMAN WA ALI RODIALLAHU ANHUM SAI’UL LILAHI LAHUM <span class="highlight">ALFATIHAH...</span></p>
+        <hr>
+        <p class="latin">3. WA SUMA ILA ARWAHI SEH HUNA SEH MUHIDDIN ABDUL KODIR JAELANI NAGRI BAGDADI KODA SHALLALLAHU SIRUHU NURONI SAI’UL LILAHI LAHUM <span class="highlight">ALFATIHAH...</span></p>
+    </div>
+
+    <div class="card">
+        <h2>2. KHUSUSON AHLAL KUBUR</h2>
+        <p class="latin">WA SUMA ILA ARWAHI YA AHLAL KUBUR KHUSUSON (ALMARHUM & ALMARHUMMAH):</p>
+        
         <div class="khususon-grid">
             <div class="silsilah-box">
-                <h3>Silsilah Bapak</h3>
-                <div class="name-list">
-                    EMAD BIN ATA<br>
-                    ATA BIN SINAN<br>
-                    SATI BINTI SAIN<br>
-                    SAIN BIN PULOH<br>
-                    ENCEP BIN JANIM<br>
-                    KANDI BIN ATA<br>
-                    AMUNG BIN SINAN<br>
-                    SINAN BIN EJEN<br>
-                    UDIK BIN SINAN<br>
-                    AMIT BIN SINAN<br>
-                    DACING BIN MINING<br>
-                    GADEL BIN PULAN<br>
-                    MIUN BIN PULAN<br>
-                    BENIN BIN MIUN<br>
-                    CEKIT BIN MIUN<br>
-                    LEOK BIN MIUN<br>
-                    BOIN BIN GADEL
+                <h3>DARI BAPAK:</h3>
+                <div class="silsilah-list">
+                    EMAD BIN ATA<br>MUNAH BINTI ATA<br>ATA BIN SINAN<br>SATI BINTI SAIN<br>APRAK BIN WIRI<br>SAIN BIN PULOH<br>LAISAH BINTI LIUN<br>ENCEP BIN JANIM<br>MANI BINTI SINAN<br>KANDI BIN ATA<br>ENCIM BIN JANIM<br>AMUNG BIN SINAN<br>SINAN BIN EJEN<br>SIAH BINTI SINAN<br>UDIK BIN SINAN<br>DACEM BINTI SINAN<br>AMIT BIN SINAN<br>SAMAH BINTI SINAN
                 </div>
             </div>
             <div class="silsilah-box">
-                <h3>Silsilah Ibu</h3>
-                <div class="name-list">
-                    MUNAH BINTI ATA<br>
-                    APRAK BIN WIRI<br>
-                    LAISAH BINTI LIUN<br>
-                    MANI BINTI SINAN<br>
-                    ENCIM BIN JANIM<br>
-                    SIAH BINTI SINAN<br>
-                    DACEM BINTI SINAN<br>
-                    SAMAH BINTI SINAN<br>
-                    MINING BIN GADEL<br>
-                    DASI BINTI MIUN<br>
-                    INI BINTI PULAN<br>
-                    BENIL BINTI PULAN<br>
-                    INENG BIN GADEL<br>
-                    KARTINAH BINTI RAMIN
+                <h3>DARI IBU:</h3>
+                <div class="silsilah-list">
+                    MINING BIN GADEL<br>DASI BINTI MIUN<br>DACING BIN MINING<br>GADEL BIN PULAN<br>INI BINTI PULAN<br>MIUN BIN PULAN<br>BENIL BINTI PULAN<br>CEKIT BIN MIUN<br>BENIN BIN MIUN<br>LEOK BIN MIUN<br>INENG BIN GADEL<br>BOIN BIN GADEL<br>KARTINAH BINTI RAMIN
                 </div>
             </div>
         </div>
-    </div>
 
-    <button class="btn-yasin" onclick="toggleYasin()">BACA SURAT YASIN (83 AYAT)</button>
-
-    <div id="yasin-content">
-        <p class="latin-bold" style="text-align:center;">BISMILLAAHIR RAHMAANIR RAHIIM</p>
-        <div id="yasin-list"></div>
+        <p class="latin" style="margin-top:20px;">ABA INA WA UMATINA WAJADATINA WALI IH’WALINA WA JAMIIL MUSLIMIN WALMUSLIMAT. WAL MU’MININ WAL MU’MINAT AL AHYA’I MINHUM WAL AMWAT PIL MASRIKIL ILA MAGRIBI SAI’UL LILALHI LAHUM <span class="highlight">ALFATIHAH...</span></p>
     </div>
 
     <div class="card">
-        <h2>DOA PENUTUPAN</h2>
-        <div class="sunda">
-            MUDAH MUDAHAN NGAOSAN YASIN IYEU DI TAMPI KU GUSTI ALLAH DI JANTEUN KEUN CAANG DI KUBUR NA, DI JANTEUN KEUN IBADAH KANA JANTEUN KEUN SYAFAAT DI YAUMIL JAZA, KHUSUSON KAGAL ALMARHUM BAPAK EMAD BIN ATA JEUNG KANA JAMI'IL MUSLIMIN WAL MUSLIMAT AL AHYA I MINHUM WAL AMWAT.
-        </div>
-        <p class="latin-bold">ALLAHUMMAGHFIRLAHU WARHAMHU WA'AFIHI WA'FUANHU... ALFATIHAH</p>
+        <h2>3. TAHLIL & SURAH PENDEK</h2>
+        <p class="latin">LAILLAHAILLAH HU ALLAHU AKBAR (BISMILLAH... AL-IKHLAS 3X)</p>
+        <p class="latin">LAILLAHAILLAH HU ALLAHU AKBAR (BISMILLAH... AL-FALAQ 1X)</p>
+        <p class="latin">LAILLAHAILLAH HU ALLAHU AKBAR (BISMILLAH... AN-NASS 1X)</p>
+        <p class="latin">LAILLAHAILLAH HU ALLAHU AKBAR (BISMILLAH... ALFATIHAH)</p>
+        <hr>
+        <p class="latin">ALIF LAM MIM ZALIKAL KITABULA ROIBAPIHI HUDA LIL MUTAKIN, ALAZINA YUMINUNA BILGOIBI WAYUKIMUNA SOLATA WAMIMA ROZAKNAHUM YUN FIKUN, WALAZINA YU MINUNA BIMA UNZILA ILAIKA WAMA UNZILA MING KOBLIK WABIL AKHIROTI HUM YUKINUN, ULA IKA ALA HUDA MIRROBIHIM WAULA IKA HUMUL MUFLIHUN, WAILAHUKUM ILA HUWAAHIBUL LAILA HAILA HUWA ROHMAN NURROHIM</p>
+        <hr>
+        <p class="latin">ALLAHULLA ILLA HA ILLA HUWAL HAYUL QOYUM, LA’TA HUZUHU SINATU WALA NA’UM, LAHUMA FISS SAMAWATI WAMA FIL’AR, MANZALAZI YASPA’U INDAHU ILA BI IZNI, YA LAMUMA BAINA AIDIHIM WAMA HOLFAHUM WALAYUHITUNA BI SAI’IN MIN ILMIHI ILA BIMASYA, WA SI’A KURSI YUHUSSAMA WATI WAL ARDO WALAYA HUZUHU HIF’ZUHUMA WAHUAWAL ALIYUL ADZIN</p>
+        <hr>
+        <p class="latin">ASTAGFIRULLAH AL AZIM (3X)</p>
+        <p class="latin">LAILAHA ILLALLAH… (13X)</p>
+        <p class="latin">LAILAHA ILLALLAH MUHAMMADAROSULLULLOH SHALLALLAHU AILAIHI WASSALAM. <span class="highlight">ALFATIHAH...</span></p>
     </div>
+
+    <button class="btn-yasin" onclick="toggleYasin()">BACA SURAT YASIN (LATIN)</button>
+
+    <div id="yasin-content">
+        <div id="yasin-list"></div>
+        <p style="text-align:center; color:var(--primary); font-weight:bold; padding: 20px;">Selesai Yasin, lanjut Doa Penutup di bawah.</p>
+    </div>
+
+    <div class="card" style="margin-top:20px;">
+        <h2>5. DOA PENUTUPAN</h2>
+        <p class="latin">ALHAMDULILLAH HIROBBIL ALAMIN</p>
+        
+        <div class="sunda">
+            MUDAH MUDAHAN NGAOSAN YASIN IYEU DI TAMPI KU GUSTI ALLAH. JENG MUDAH MUDAHAN ALMARHUM SARENG ALMARHUMAH KHUSUNA ALMARHUM BAPAK EMAD BIN ATA UMUMNA KA KAUM MUSLIMIN WAL MUSLIMAT WAL MUKMININ WALMUKMINAT.<br><br>
+            MUDAH MUDAHAN ALMARHUM DI TAMPI IMAN ISLAMNA, DIHAPUSKEN SAGALA DOSA-DOSANA, DILIPAT GANDAKEUN PAHALANA, DI CAANGKEN SARENG DI LEGA KEUN DI ALAM KUBURNA, SARENG MUDAH MUDAHAN DI TEMPATKEN DI SYURGA NA ALLAH NU TERBAIK.<br><br>
+            ATUH URANG NU NGAOSANA MUDAH-MUDAHAN JADI AMAL KASAEAN SARENG NAON-NAON NU DI PIKAHAYANG MUDAH -MUDAHAN BISA KA KOBUL SARENG MENANG KABERKAHAN KASALAMETAN JEUNG DI MUDAHKEUN REZEKI NA, AMIN YA ROBBAL ALAMIN.
+        </div>
+
+        <p class="latin" style="margin-top:20px;">AUDZUBILLAHIMINASYAITONIROZIM BISMILLAHIROHMANIROHIM</p>
+        <p class="latin">ASHADUALLA ILAHAILALLAH WA ASHADU ANNA MUHAMMADAR RASULULLAH</p>
+        <p class="latin">ALLAHUMMAJ ALNI MINAT TAWWABINA WAJ'ALNI MINAL MUTATHOHIRIN WAJ'ALNNI MIN IBADIKAS SHOLIHIN</p>
+        <hr>
+        <p class="latin">ALLAHUMMAGHFIRLANA YA GHOFUR (3X)</p>
+        <p class="latin">ALLAHUMMA FIRLANA ZUNUBANA WALIWALIDINA WARHAMHUMA KAMA ROBBAYANI SOGHIRO</p>
+        <p class="latin">ALLAHUMMA FIRLAHU WARHAMHU WA'AFIHI WA'FUANHU</p>
+        <hr>
+        <p class="latin">ALLAHUMMA INNA NAS ALUKA SALAMATAN FIDDIN, WA AFIYATAN FIL JASADI, WA ZIADATAN FIL ILMI, WA BARAKATAN FI RIZKI, WA TAUBATAN QOBLAL MAUT, WARAHMATAN INDAL MAUT, WA MAGHFIRATAN BA'DAL MAUT</p>
+        <p class="latin">ALLAHUMMA HAWWIN ALAINA FI SAKARATIL MAUT, WANNAJATA MINANNAR WAL AFWA INDAL HISAB</p>
+        <p class="latin">RABBANA LA TUZIGH QULUBANA BA'DA ED-HADDAITANA WAHABLANA MIL LADUNKA RAHMATAN INNAKA ANTAL WAHHAB</p>
+        <p class="latin">ROBBANA ATINA FIDDUNYA HASANAH, WAFIL AKHIROTI HASANAH WAQINA ADZABANNAR</p>
+        <p class="latin">SUBHANA RABBIKA RABBIL IZZATI AMMA YASIFUN, WASALAMUN ALAL MURSALIN WALHAMDULILLAHI RABBIL ALAMIN... <span class="highlight">AL-FATIHAH</span></p>
+    </div>
+
 </div>
 
+<footer>
+    Dibuat dengan tulus untuk Almarhum Bapak Emad bin Ata & Keluarga
+</footer>
+
 <script>
-    const yasinData = [
+    const yasinLatinData = [
         {no: 1, lt: "Yaa-Siiin"},
         {no: 2, lt: "Wal-Qur-aanil-Hakiim"},
         {no: 3, lt: "Innaka laminal mursaliin"},
@@ -119,24 +147,24 @@
         {no: 9, lt: "Wa ja'alnaa mim baini aydiihim saddanw-wa min khalfihim saddan fa aghshai naahum fahum laa yubsiruun"},
         {no: 10, lt: "Wa sawaaa'un 'alaihim 'a-anzartahum am lam tunzirhum laa yu'minuun"},
         {no: 11, lt: "Innamaa tunziru manit taba 'az-Zikra wa khashiyar Rahmaana bilghaib; fabashshirhu bimaghfiratinw-wa ajrin kariim"},
-        {no: 12, lt: "Innaa Nahnu nuhyil mawtaa wa naktubu maa qaddamuu wa aasaarahum; wa kulla shai'in ahsainaahu fiii Imaamim-mubiin"},
+        {no: 12, lt: "Innaa Nahnu nuhyil mawtaa wa naktubu maa qaddamuu wa aasaarahum; wa kulla shai'in ahsainaahu fiii Imaamim Mubiin"},
         {no: 13, lt: "Wadrib lahum masalan Ashaabal Qaryatih; iz jaaa'ahal mursaluun"},
         {no: 14, lt: "Iz arsalnaaa ilaihimusnaini fakazzabuuhumaa fa'azzaznaa bisaalisin fa qooluuu innaaa ilaikum mursaluun"},
         {no: 15, lt: "Qooluu maaa antum illaa basharum mislunaa wa maaa anzalar Rahmaanu min shai'in in antum illaa takzibuun"},
         {no: 16, lt: "Qooluu Rabbunaa ya'lamu innaaa ilaikum lamursaluun"},
         {no: 17, lt: "Wa maa 'alainaaa illal balaaghul mubiin"},
-        {no: 18, lt: "Qooluu innaa tataiyarnaa bikum la'il-lam tantahuu lanarjumannakum wa layamassannakum minnaa 'azaabun aliim"},
+        {no: 18, lt: "Qooluu innaa tataiyarnaa bikum la'il-lam tantahuu lanarjumannakum wa layamas sannakum minnaa 'azaabun aliim"},
         {no: 19, lt: "Qooluu taaa'irukum ma'akum; a'in zukkirtum; bal antum qawmum musrifuun"},
         {no: 20, lt: "Wa jaaa'a min aqsal madiinati rajuluny yas'aa qoola yaa qawmit tabi'ul mursaliin"},
         {no: 21, lt: "Ittabi'uu mal-laa yas'alukum ajranw-wa hum muhtaduun"},
         {no: 22, lt: "Wa maa liya laaa a'budul lazii fataranii wa ilaihi turja'uun"},
-        {no: 23, lt: "'A-attakhizu min duunihiii aalihatan iny-yuridnir Rahmaanu bidurril-laa tughni 'annii shafaa'atuhum shai'anw-wa laa yunqizuun"},
+        {no: 23, lt: "'A-attakhizu min duunihiii aalihatan iny-yuridnir Rahmaanu bidurril-laa tughni 'annii shafaa 'atuhum shai'anw-wa laa yunqizuun"},
         {no: 24, lt: "Inniii izal-lafii dalaa-lim-mubiin"},
         {no: 25, lt: "Inniii aamantu bi Rabbikum fasma'uun"},
         {no: 26, lt: "Qiilad khulil Jannnah; qoola yaa laita qawmii ya'lamuun"},
         {no: 27, lt: "Bimaa ghafara lii Rabbii wa ja'alanii minal mukramiin"},
         {no: 28, lt: "Wa maaa anzalnaa 'alaa qawmihii mim ba'dihii min jundim minas-samaaa'i wa maa kunnaa munziliin"},
-        {no: 29, lt: "In kaanat illaa saihatanw waahidatan fa izaa hum khaamiduun"},
+        {no: 29, lt: "In kaanat illaa saihatanw waahidatan fa'izaa hum khaamiduun"},
         {no: 30, lt: "Yaa hasratan 'alal 'ibaad; maa yaatiihim mir rasuulin illaa kaanuu bihii yastahzi'uun"},
         {no: 31, lt: "Alam yaraw kam ahlak naa qablahum minal quruuni annahum ilaihim laa yarji'uun"},
         {no: 32, lt: "Wa in kullul lammaa jamii'ul-ladainaa muhdaruun"},
@@ -144,66 +172,77 @@
         {no: 34, lt: "Wa ja'alnaa fiihaa jannaatim min nakhiilinw-wa a'naabinw-wa fajjarnaa fiihaa minal 'uyuun"},
         {no: 35, lt: "Liyaakuluu min samarihii wa maa 'amilat-hu aidiihim; afalaa yashkuruun"},
         {no: 36, lt: "Subhaanal lazii khalaqal azwaaja kullahaa mimmaa tumbitul ardu wa min anfusihim wa mimmaa laa ya'lamuun"},
-        {no: 37, lt: "Wa Aayatul lahumul lailu naslakhu minhun nahaara fa izaa hum muzlimuun"},
+        {no: 37, lt: "Wa Aayatul lahumul lailu naslakhu minhun nahaara fa'izaa hum muzlimuun"},
         {no: 38, lt: "Wash-shamsu tajrii limustaqarril lahaa; zaalika taqdiirul 'Aziizil 'Aliim"},
         {no: 39, lt: "Walqamara qaddarnaahu manaazila hattaa 'aada kal'urjuunil qadiim"},
-        {no: 40, lt: "Lash shamsu yambaghii lahaaa an tudrikal qamara wa lal lailu saabiqun nahaar; wa kullun fii falakiny-yasbahuun"},
+        {no: 40, lt: "Lash shamsu yambaghii lahaaa an tudrikal qamara wa lal lailu saabiqun nahaar; wa kullun fii falakiny yasbahuun"},
         {no: 41, lt: "Wa Aayatul lahum annaa hamalnaa zurriyatahum fil fulkil mashhuun"},
         {no: 42, lt: "Wa khalaqnaa lahum mim-mislihii maa yarkabuun"},
         {no: 43, lt: "Wa in nashaa nughriqhum falaa sariikha lahum wa laa hum yunqazuun"},
         {no: 44, lt: "Illaa rahmatam minnaa wa mataa'an ilaa hiin"},
         {no: 45, lt: "Wa izaa qiila lahumuttaquu maa baina aidiikum wa maa khalfakum la'allakum turhamuun"},
         {no: 46, lt: "Wa maa taatiihim min aayatim min Aayaati Rabbihim illaa kaanuu 'anhaa mu'ridiin"},
-        {no: 47, lt: "Wa izaa qiila lahum anfiquu mimmaa razaqakumul laah; qoolal laziina kafaruu lillaziina aamanuuu anu-t'imu mal-law yashaaa'ullaahu at'amahuuu in antum illaa fii dalaalim mubiin"},
+        {no: 47, lt: "Wa izaa qiila lahum anfiquu mimmaa razaqakumul laahu qoolal laziina kafaruu lillaziina aamanuuu anu-t'imu mal-law yashaaa'ul laahu at'amahuuu in antum illaa fii dalaalim mubiin"},
         {no: 48, lt: "Wa yaquuluuna mataa haazal wa'du in kuntum saadiqiin"},
         {no: 49, lt: "Maa yanzuruuna illaa saihatanw waahidatan taakhuzuhum wa hum yakhissimuun"},
         {no: 50, lt: "Falaa yastatii'uuna taw siyatanw-wa laaa ilaaa ahlihim yarji'uun"},
-        {no: 51, lt: "Wa nufikha fis-suuri faizaa hum minal ajdaasi ilaa Rabbihim yansiluun"},
-        {no: 52, lt: "Qooluu yaa wailanaa mam ba'asanaa mim marqadinaa; haazaa maa wa'adar Rahmaanu wa sadaqal mursaluun"},
-        {no: 53, lt: "In kaanat illaa saihatanw waahidatan faizaa hum jamii'ul ladainaa muhdaruun"},
+        {no: 51, lt: "Wa nufikha fis-suuri fa'izaa hum minal ajdaasi ilaa Rabbihim yansiluun"},
+        {no: 52, lt: "Qooluu yaa wailanaa mam ba'asanaa mim marqadinaa; haaza maa wa'adar Rahmaanu wa sadaqal mursaluun"},
+        {no: 53, lt: "In kaanat illaa saihatanw waahidatan fa'izaa hum jamii'ul-ladainaa muhdaruun"},
         {no: 54, lt: "Fal-Yawma laa tuzlamu nafsun shai'anw-wa laa tujzawna illaa maa kuntum ta'maluun"},
         {no: 55, lt: "Inna Ashaabal jannatil Yawma fii shughulin faakihuun"},
         {no: 56, lt: "Hum wa azwaajuhum fii zilaalin 'alal araaa'iki muttaki'uun"},
         {no: 57, lt: "Lahum fiihaa faakihatunw-wa lahum maa yadda'uun"},
         {no: 58, lt: "Salaamun qawlam mir Rabbir Rahiim"},
         {no: 59, lt: "Wamtaazul Yawma ayyuhal mujrimuun"},
-        {no: 60, lt: "Alam a'had ilaikum yaa Baniii Aadama al-laa ta'budush Shaitaana innahuu lakum 'aduwwum mubiin"},
-        {no: 61, lt: "Wa ani'buduunii; haazaa Siraatum Mustaqiim"},
+        {no: 60, lt: "Alam a'had ilaikum yaa Baniii Aadama al-laa ta'budush Shaitaan; innahuu lakum 'aduwwum mubiin"},
+        {no: 61, lt: "Wa ani'buduunii; haaza Siraatum Mustaqiim"},
         {no: 62, lt: "Wa laqad adalla minkum jibillan kasiiraa; afalam takuunuu ta'qiluun"},
         {no: 63, lt: "Haazihii Jahannamul latii kuntum tuu'aduun"},
         {no: 64, lt: "Islawhal Yawma bimaa kuntum takfuruun"},
         {no: 65, lt: "Al-Yawma nakhtimu 'alaaa afwaahihim wa tukallimunaaa aidiihim wa tashhadu arjuluhum bimaa kaanuu yaksibuun"},
-        {no: 66, lt: "Wa law nashaaa'u lata masna 'alaaa aiyunihim fastabaqus siraata fa-annaa yubsiruun"},
-        {no: 67, lt: "Wa law nashaaa'u lamasakhnaahum 'alaa makaanatihim famas tataa'uu mudiyyanw-wa laa yarji'uun"},
-        {no: 68, lt: "Wa man nu 'ammirhu nunakkishu fil-khalq; afalaa ya'qiluun"},
+        {no: 66, lt: "Wa law nashaaa'u latamasnaa 'alaaa a'yunihim fastabaqus siraata fa-annaa yubsiruun"},
+        {no: 67, lt: "Wa law nashaaa'u lamasakhnaahum 'alaa makaanatihim famas tataa'uu muddiyanw-wa laa yarji'uun"},
+        {no: 68, lt: "Wa man nu'ammirhu nunakkishu fil khalq; afalaa ya'qiluun"},
         {no: 69, lt: "Wa maa 'allamnaahush shi'ra wa maa yambaghii lah; in huwa illaa zikrunw-wa Qur-aanum mubiin"},
-        {no: 70, lt: "Liyunzira man kaana haiyanw-wa yahiqqal qawlu 'alal-kaafiriin"},
+        {no: 70, lt: "Liyunzira man kaana haiyanw-wa yahiqqal qawlu 'alal kaafiriin"},
         {no: 71, lt: "Awalam yaraw annaa khalaqnaa lahum mimmaa 'amilat aidiinaaa an'aaman fahum lahaa maalikuun"},
         {no: 72, lt: "Wa zallalnaahaa lahum faminhaa rakuubuhum wa minhaa yaakuluun"},
         {no: 73, lt: "Wa lahum fiihaa manaa fi'u wa mashaarib; afalaa yashkuruun"},
-        {no: 74, lt: "Wattakhazuu min duunil laahi aalihatal la'allahum yunsaruun"},
+        {no: 74, lt: "Wattakhazuu min duunil laahi aalihatal la'allahum yunsaruuun"},
         {no: 75, lt: "Laa yastatii'uuna nasrahum wa hum lahum jundum muhdaruun"},
         {no: 76, lt: "Falaa yahzunka qawluhum; innaa na'lamu maa yusirruuna wa maa yu'linuun"},
-        {no: 77, lt: "Awalam yaral insaanu annaa khalaqnaahu min nutfatin faizaa huwa khasiimum mubiin"},
-        {no: 78, lt: "Wa daraba lanaa maslanw-wa nasiya khalqahuu; qoola many-yuhyil 'izaama wa hiya ramiim"},
+        {no: 77, lt: "Awalam yaral insaanu annaa khalaqnaahu min nutfatin fa'izaa huwa khasiimum mubiin"},
+        {no: 78, lt: "Wa daraba lanaa masalanw-wa nasiya khalqahuu qoola many-yuhyil 'izaama wa hiya ramiim"},
         {no: 79, lt: "Qul yuh yiihal laziii ansha ahaaa awwala marrah; wa Huwa bikulli khalqin 'Aliim"},
-        {no: 80, lt: "Allazii ja'ala lakum minash shajaril akhdari naaran fa izaa antum minhu tuuqiduun"},
-        {no: 81, lt: "Awa laisal lazii khalaqas samaawaati wal arda biqoodirin 'alaaa aiy-yakhluqa mislahum; balaa wa Huwal Khallaaqul 'Aliim"},
-        {no: 82, lt: "Innamaaa amruhuuu izaaa araada shai'an aiy-yaquula lahuu KUN FA-YAKUUN"},
+        {no: 80, lt: "Allazii ja'ala lakum minash shajaril akhdari naaran fa'izaa antum minhu tuuqiduun"},
+        {no: 81, lt: "Awa laisal lazii khalaqas samaawaati wal arda bi qoodirin 'alaaa any-yakhluqa mislahum; balaa wa Huwal Khallaaqul 'Aliim"},
+        {no: 82, lt: "Innamaaa amruhuuu izaaa araada shai'an any-yaquula lahuu KUN fa-yakuun"},
         {no: 83, lt: "Fa Subhaanal lazii biyadihii malakuutu kulli shai-inw-wa ilaihi turja'uun"}
     ];
 
     const listDiv = document.getElementById('yasin-list');
-    yasinData.forEach(item => {
+    yasinLatinData.forEach(item => {
         const div = document.createElement('div');
         div.className = 'yasin-item';
-        div.innerHTML = `<span class="yasin-no">${item.no}.</span> <span class="yasin-latin">${item.lt}</span>`;
+        div.innerHTML = `
+            <div class="yasin-no">${item.no}</div>
+            <div class="yasin-latin-text">${item.lt}</div>
+        `;
         listDiv.appendChild(div);
     });
 
     function toggleYasin() {
-        const content = document.getElementById("yasin-content");
-        content.style.display = (content.style.display === "block") ? "none" : "block";
+        var x = document.getElementById("yasin-content");
+        var btn = document.querySelector(".btn-yasin");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+            btn.innerHTML = "BACA SURAT YASIN (LATIN)";
+        } else {
+            x.style.display = "block";
+            btn.innerHTML = "TUTUP SURAT YASIN";
+            x.scrollIntoView({ behavior: 'smooth' });
+        }
     }
 </script>
 </body>
