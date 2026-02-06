@@ -22,9 +22,11 @@
         .silsilah-box { background: #1a1a1a; padding: 8px; border-radius: 6px; border: 1px dashed #444; }
         .silsilah-list { line-height: 1.5; font-weight: bold; color: var(--accent); font-size: 0.8rem; }
 
-        .btn-yasin { display: block; width: 100%; padding: 15px; background: var(--primary); color: white; text-align: center; border-radius: 10px; font-weight: bold; font-size: 1rem; margin: 15px 0; cursor: pointer; border: none; box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3); }
+        /* Button Sticky Style */
+        .btn-wrapper { position: sticky; top: 65px; z-index: 90; padding: 5px 0; background: var(--bg); }
+        .btn-yasin { display: block; width: 100%; padding: 15px; background: var(--primary); color: white; text-align: center; border-radius: 10px; font-weight: bold; font-size: 1rem; cursor: pointer; border: none; box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3); }
         
-        /* Yasin Latin Only Styling */
+        /* Yasin Latin Only */
         #yasin-content { display: none; background: #000; padding: 10px; border-radius: 8px; border: 1px solid var(--primary); margin-top: 10px; }
         .yasin-item { border-bottom: 1px solid #222; padding: 10px 0; display: flex; align-items: flex-start; }
         .yasin-no { color: var(--primary); font-weight: bold; min-width: 25px; font-size: 0.8rem; margin-top: 2px; }
@@ -95,7 +97,9 @@
         <p class="latin">ASTAGFIRULLAH AL AZIM (3X) | LAILAHA ILLALLAH… (13X) | <span class="highlight">ALFATIHAH...</span></p>
     </div>
 
-    <button class="btn-yasin" onclick="toggleYasin()">BACA SURAT YASIN (LATIN)</button>
+    <div class="btn-wrapper">
+        <button class="btn-yasin" onclick="toggleYasin()">BACA SURAT YASIN (LATIN)</button>
+    </div>
 
     <div id="yasin-content">
         <div id="yasin-list"></div>
@@ -103,7 +107,7 @@
     </div>
 
     <div class="card" style="margin-top:20px;">
-        <h2>5. DOA PENUTUPAN</h2>
+        <h2>4. DOA PENUTUPAN</h2>
         <p class="latin">ALHAMDULILLAH HIROBBIL ALAMIN</p>
         
         <div class="sunda">
