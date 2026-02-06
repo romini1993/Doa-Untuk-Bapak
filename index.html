@@ -3,28 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doa untuk Bapak</title>
+    <title>Ngaji Bapak</title>
     <link rel="manifest" href="manifest.json">
     <style>
-        body { font-family: sans-serif; padding: 20px; line-height: 1.6; background: #f4f4f4; }
-        .content { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        h1 { text-align: center; color: #2c3e50; font-size: 1.5rem; }
-        .doa-arab { font-size: 1.8rem; text-align: right; margin: 20px 0; font-family: serif; }
-        .terjemahan { font-style: italic; color: #555; margin-bottom: 20px; }
+        :root { --primary: #2c3e50; --bg: #f9f9f9; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); margin: 0; padding: 0; color: #333; }
+        header { background: var(--primary); color: white; padding: 20px; text-align: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .container { padding: 20px; max-width: 600px; margin: auto; }
+        .card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        h2 { border-bottom: 2px solid #eee; padding-bottom: 10px; color: var(--primary); font-size: 1.2rem; }
+        .arab { font-size: 1.8rem; text-align: right; line-height: 2.5; margin: 20px 0; font-family: "Traditional Arabic", serif; }
+        .latin { font-weight: bold; color: #444; margin-bottom: 5px; }
+        .silsilah { background: #fffde7; padding: 15px; border-radius: 8px; border-left: 5px solid #fbc02d; font-size: 0.9rem; line-height: 1.8; }
+        .sunda { color: #2e7d32; font-style: italic; background: #e8f5e9; padding: 10px; border-radius: 5px; }
+        .btn-yasin { display: block; width: 100%; padding: 15px; background: #d32f2f; color: white; text-align: center; text-decoration: none; border-radius: 8px; font-weight: bold; margin: 20px 0; }
+        footer { text-align: center; padding: 20px; color: #888; font-size: 0.8rem; }
     </style>
 </head>
 <body>
-    <div class="content">
-        <h1>Doa untuk Almarhum Bapak Emad</h1>
-        <hr>
-        <p class="doa-arab">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</p>
-        <p>Pokonya di sini lu ketik semua teks yang ada di foto itu, Bro. Elu bisa bagi per bagian pake judul.</p>
+
+<header>
+    <div style="font-size: 0.8rem; opacity: 0.8;">Khususon Almarhum</div>
+    <div style="font-size: 1.2rem; font-weight: bold;">BAPAK EMAD BIN ATA</div>
+</header>
+
+<div class="container">
+    <div class="card">
+        <p class="arab">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+        <p class="latin">ASTAGFIRULLAH ALAZIM 3X</p>
+        <p class="latin">ALAZILAILAHAILAHUWALHAYULQOYUM WAATUBU ILAIHI</p>
+        <p class="latin">ASHADU ALA ILAHA ILALLAH WAASHADUANA MUHAMMADAR ROSULULLAH</p>
     </div>
 
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js');
-        }
-    </script>
+    <div class="card">
+        <h2>Hadiat / Tawasul</h2>
+        <p>1. ILA HADROTIN NABI MUHAMMADIN... <strong>ALFATIHAH.</strong></p>
+        <p>2. WA ILA ARWAHI ABA IHI... <strong>ALFATIHAH.</strong></p>
+        <p>3. WA SUMA ILA ARWAHI SEH HUNA... <strong>ALFATIHAH.</strong></p>
+    </div>
+
+    <div class="card">
+        <h2>Silsilah Khususon</h2>
+        <div class="silsilah">
+            <strong>EMAD BIN ATA</strong><br>
+            MUNAH BINTI ATA<br>
+            ATA BIN SINAN<br>
+            SATI BINTI SAIN<br>
+            APRAK BIN WIRI<br>
+            SAIN BIN PULOH<br>
+            LAISAH BINTI LIUN<br>
+            ENCEP BIN JANIM<br>
+            MANI BINTI SINAN<br>
+            KANDI BIN ATA<br>
+            ENCIM BIN JANIM<br>
+            AMUNG BIN SINAN<br>
+            SINAN BIN EJEN<br>
+            SIAH BINTI SINAN<br>
+            UDIK BIN SINAN<br>
+            DACEM BINTI SINAN<br>
+            AMIT BIN SINAN<br>
+            SAMAH BINTI SINAN<br>
+            MINING BIN GADEL<br>
+            DASI BINTI MIUN<br>
+            DACING BIN MINING<br>
+            GADEL BIN PULAN<br>
+            INI BINTI PULAN<br>
+            MIUN BIN PULAN<br>
+            BENIL BINTI PULAN<br>
+            CEKIT BIN MIUN<br>
+            BENIN BIN MIUN<br>
+            LEOK BIN MIUN<br>
+            INENG BIN GADEL<br>
+            BOIN BIN GADEL
+        </div>
+        <p style="font-size: 0.8rem; margin-top:10px;">ABA INA WA UMATINA... <strong>ALFATIHAH.</strong></p>
+    </div>
+
+    <div class="card">
+        <p class="latin">Al-Ikhlas 3x, Al-Falaq 1x, An-Nas 1x, Al-Fatihah.</p>
+        <p class="latin">ALIF LAM MIM... (Ayat Kursi)... dst.</p>
+    </div>
+
+    <a href="https://litequran.net/yasin" class="btn-yasin" target="_blank">KLIK DISINI BACA SURAT YASIN</a>
+    <p style="text-align: center; font-size: 0.8rem; color: #666;">(Atau elu ketik manual Yasin-nya di sini biar gak perlu internet)</p>
+
+    <div class="card">
+        <h2>DOA PENUTUPAN</h2>
+        <div class="sunda">
+            MUDAH MUDAHAN NGAOSAN YASIN IYEU DI TAMPI KU GUSTI ALLAH... (dst)
+        </div>
+        <p class="latin" style="margin-top:15px;">ASHADUALLA ILAHAILALLAH...</p>
+        <p class="latin">ALLAHUMMAGHFIRLANA YA GHOFUR 3X</p>
+        <p class="latin">ALLAHUMMA FIRLAHU WARHAMHU WA'AFIHI WA'FUANHU</p>
+        <p class="latin">ROBBANA ATINA FIDDUNYA HASANAH...</p>
+    </div>
+</div>
+
+<footer>
+    Dibuat untuk Almarhum Bapak & Keluarga
+</footer>
+
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js');
+    }
+</script>
 </body>
 </html>
