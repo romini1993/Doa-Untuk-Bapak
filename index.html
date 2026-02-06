@@ -6,46 +6,54 @@
     <title>Ngaji Bapak</title>
     <link rel="manifest" href="manifest.json">
     <style>
-        :root { --primary: #2c3e50; --bg: #f9f9f9; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); margin: 0; padding: 0; color: #333; }
-        header { background: var(--primary); color: white; padding: 20px; text-align: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-        .container { padding: 20px; max-width: 600px; margin: auto; }
-        .card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        h2 { border-bottom: 2px solid #eee; padding-bottom: 10px; color: var(--primary); font-size: 1.2rem; }
-        .arab { font-size: 1.8rem; text-align: right; line-height: 2.5; margin: 20px 0; font-family: "Traditional Arabic", serif; }
-        .latin { font-weight: bold; color: #444; margin-bottom: 5px; }
-        .silsilah { background: #fffde7; padding: 15px; border-radius: 8px; border-left: 5px solid #fbc02d; font-size: 0.9rem; line-height: 1.8; }
-        .sunda { color: #2e7d32; font-style: italic; background: #e8f5e9; padding: 10px; border-radius: 5px; }
-        .btn-yasin { display: block; width: 100%; padding: 15px; background: #d32f2f; color: white; text-align: center; text-decoration: none; border-radius: 8px; font-weight: bold; margin: 20px 0; }
-        footer { text-align: center; padding: 20px; color: #888; font-size: 0.8rem; }
+        :root { --primary: #1b5e20; --bg: #fdfdfd; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg); margin: 0; padding: 0; color: #222; }
+        header { background: var(--primary); color: white; padding: 25px 15px; text-align: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        .container { padding: 15px; max-width: 600px; margin: auto; }
+        .card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid #eee; }
+        h2 { border-bottom: 2px solid #4caf50; padding-bottom: 8px; color: var(--primary); font-size: 1.1rem; text-transform: uppercase; }
+        h3 { font-size: 1rem; color: #2e7d32; margin-top: 15px; border-left: 4px solid #4caf50; padding-left: 10px; }
+        .bismillah { font-size: 2rem; text-align: center; margin: 20px 0; font-family: serif; color: #000; }
+        .arab { font-size: 1.7rem; text-align: right; line-height: 2.2; margin: 15px 0; font-family: "Traditional Arabic", serif; }
+        .latin { font-weight: 600; color: #333; line-height: 1.6; margin-bottom: 12px; text-align: left; }
+        .sunda { font-style: italic; background: #f1f8e9; padding: 15px; border-radius: 8px; border: 1px dashed #4caf50; color: #1b5e20; margin: 15px 0; }
+        .silsilah-list { line-height: 1.8; font-weight: bold; color: #444; }
+        footer { text-align: center; padding: 30px; color: #999; font-size: 0.8rem; }
+        hr { border: 0; border-top: 1px solid #eee; margin: 15px 0; }
     </style>
 </head>
 <body>
 
 <header>
-    <div style="font-size: 0.8rem; opacity: 0.8;">Khususon Almarhum</div>
-    <div style="font-size: 1.2rem; font-weight: bold;">BAPAK EMAD BIN ATA</div>
+    <div style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 5px;">Aplikasi Doa Khusus</div>
+    <div style="font-size: 1.3rem; font-weight: bold; letter-spacing: 1px;">ALMARHUM BAPAK EMAD</div>
 </header>
 
 <div class="container">
+
     <div class="card">
-        <p class="arab">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
-        <p class="latin">ASTAGFIRULLAH ALAZIM 3X</p>
+        <div class="bismillah">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+        <p class="latin">ASTAGFIRULLAH ALAZIM (3X)</p>
         <p class="latin">ALAZILAILAHAILAHUWALHAYULQOYUM WAATUBU ILAIHI</p>
         <p class="latin">ASHADU ALA ILAHA ILALLAH WAASHADUANA MUHAMMADAR ROSULULLAH</p>
     </div>
 
     <div class="card">
-        <h2>Hadiat / Tawasul</h2>
-        <p>1. ILA HADROTIN NABI MUHAMMADIN... <strong>ALFATIHAH.</strong></p>
-        <p>2. WA ILA ARWAHI ABA IHI... <strong>ALFATIHAH.</strong></p>
-        <p>3. WA SUMA ILA ARWAHI SEH HUNA... <strong>ALFATIHAH.</strong></p>
+        <h2>1. HADIAT (TAWASUL)</h2>
+        <p class="latin">1. ILA HADROTIN NABI MUHAMMADIN SHALLALLAHU ALAIHI WASALLAM WA’ALA ALIHI WA’AZWAZIHI WAZURIATIHI WA AHLI BAITIHI KIROMI SAI’UL LILAHI LAHUM <strong>ALFATIHAH...</strong></p>
+        <hr>
+        <p class="latin">2. WA ILA ARWAHI ABA IHI WA IKHWANIHI MINAL AMBIYA’I WALMURSALIN. WA ALI HULI MINHUM WA SOHDIHIN AZMAIN, HUSUSON AL HULAPA’I ROSIDDIN, SADATINA ABI BAKRI WA UMAR WA USMAN WA ALI RODIALLAHU ANHUM SAI’UL LILAHI LAHUM <strong>ALFATIHAH...</strong></p>
+        <hr>
+        <p class="latin">3. WA SUMA ILA ARWAHI SEH HUNA SEH MUHIDDIN ABDUL KODIR JAELANI NAGRI BAGDADI KODA SHALLALLAHU SIRUHU NURONI SAI’UL LILAHI LAHUM <strong>ALFATIHAH...</strong></p>
     </div>
 
     <div class="card">
-        <h2>Silsilah Khususon</h2>
-        <div class="silsilah">
-            <strong>EMAD BIN ATA</strong><br>
+        <h2>2. KHUSUSON AHLAL KUBUR</h2>
+        <p class="latin">WA SUMA ILA ARWAHI YA AHLAL KUBUR KHUSUSON:</p>
+        
+        <h3>KELUARGA DARI BAPAK:</h3>
+        <div class="silsilah-list">
+            EMAD BIN ATA<br>
             MUNAH BINTI ATA<br>
             ATA BIN SINAN<br>
             SATI BINTI SAIN<br>
@@ -62,7 +70,11 @@
             UDIK BIN SINAN<br>
             DACEM BINTI SINAN<br>
             AMIT BIN SINAN<br>
-            SAMAH BINTI SINAN<br>
+            SAMAH BINTI SINAN
+        </div>
+
+        <h3>KELUARGA DARI IBU:</h3>
+        <div class="silsilah-list">
             MINING BIN GADEL<br>
             DASI BINTI MIUN<br>
             DACING BIN MINING<br>
@@ -74,33 +86,75 @@
             BENIN BIN MIUN<br>
             LEOK BIN MIUN<br>
             INENG BIN GADEL<br>
-            BOIN BIN GADEL
+            BOIN BIN GADEL<br>
+            KARTINAH BINTI RAMIN
         </div>
-        <p style="font-size: 0.8rem; margin-top:10px;">ABA INA WA UMATINA... <strong>ALFATIHAH.</strong></p>
+
+        <p class="latin" style="margin-top:20px;">ABA INA WA UMATINA WAJADATINA WALI IH’WALINA WA JAMIIL MUSLIMIN WALMUSLIMAT. WAL MU’MININ WAL MU’MINAT AL AHYA’I MINHUM WAL AMWAT PIL MASRIKIL ILA MAGRIBI SAI’UL LILALHI LAHUM <strong>ALFATIHAH...</strong></p>
     </div>
 
     <div class="card">
-        <p class="latin">Al-Ikhlas 3x, Al-Falaq 1x, An-Nas 1x, Al-Fatihah.</p>
-        <p class="latin">ALIF LAM MIM... (Ayat Kursi)... dst.</p>
+        <h2>3. TAHLIL & SURAH PENDEK</h2>
+        <p class="latin">LAILLAHAILLAH HU ALLAHU AKBAR</p>
+        <p class="latin">BISMILLAH HIRROHMAN NIROHIM (AL-IKHLAS 3X)</p>
+        <p class="latin">LAILLAHAILLAH HU ALLAHU AKBAR</p>
+        <p class="latin">BISMILLAH HIRROHMAN NIROHIM (AL-FALAQ 1X)</p>
+        <p class="latin">LAILLAHAILLAH HU ALLAHU AKBAR</p>
+        <p class="latin">BISMILLAH HIRROHMAN NIROHIM (AN-NASS 1X)</p>
+        <p class="latin">LAILLAHAILLAH HU ALLAHU AKBAR</p>
+        <p class="latin">BISMILLAH HIRROHMAN NIROHIM (AL-FATIHAH)</p>
+        <hr>
+        <p class="latin">ALIF LAM MIM ZALIKAL KITABULA ROIBAPIHI HUDA LIL MUTAKIN, ALAZINA YUMINUNA BILGOIBI WAYUKIMUNA SOLATA WAMIMA ROZAKNAHUM YUN FIKUN, WALAZINA YU MINUNA BIMA UNZILA ILAIKA WAMA UNZILA MING KOBLIK WABIL AKHIROTI HUM YUKINUN, ULA IKA ALA HUDA MIRROBIHIM WAULA IKA HUMUL MUFLIHUN, WAILAHUKUM ILA HUWAAHIBUL LAILA HAILA HUWA ROHMAN NURROHIM</p>
+        <hr>
+        <p class="latin">ALLAHULLA ILLA HA ILLA HUWAL HAYUL QOYUM, LA’TA HUZUHU SINATU WALA NA’UM, LAHUMA FISS SAMAWATI WAMA FIL’AR, MANZALAZI YASPA’U INDAHU ILA BI IZNI, YA LAMUMA BAINA AIDIHIM WAMA HOLFAHUM WALAYUHITUNA BI SAI’IN MIN ILMIHI ILA BIMASYA, WA SI’A KURSI YUHUSSAMA WATI WAL ARDO WALAYA HUZUHU HIF’ZUHUMA WAHUAWAL ALIYUL ADZIN</p>
+        <hr>
+        <p class="latin">ASTAGFIRULLAH AL AZIM (3X)</p>
+        <p class="latin">AFDOLU ZIQRI PA’LAM ANAHU ....</p>
+        <p class="latin">LAILAHA ILLALLAH… HAYUM MABJUD ....</p>
+        <p class="latin">LAILAHA ILLALLAH… HAYUM MA’BUD .…</p>
+        <p class="latin">LAILAHA ILLALLAH… HAYUM BAK ....</p>
+        <p class="latin">LAILAHA ILLALLAH (13X)</p>
+        <p class="latin">LAILAHA ILLALLAH MUHAMMADAROSULLULLOH SHALLALLAHU AILAIHI WASSALAM.</p>
+        <p class="latin">INNALLAHA WAMALA IKATAHU YUSOLUNA ALA NABI YA AYUHAL LAZINA AMANU SOLU ALAIHI WASALIM MUTASLIMA. <strong>ALFATIHAH...</strong></p>
     </div>
 
-    <a href="https://litequran.net/yasin" class="btn-yasin" target="_blank">KLIK DISINI BACA SURAT YASIN</a>
-    <p style="text-align: center; font-size: 0.8rem; color: #666;">(Atau elu ketik manual Yasin-nya di sini biar gak perlu internet)</p>
+    <div class="card" style="text-align: center; border: 2px solid #1b5e20;">
+        <h2>4. BACA SURAH YASIN</h2>
+        <p><em>(Silahkan baca Surat Yasin dari buku atau aplikasi Yasin)</em></p>
+    </div>
 
     <div class="card">
-        <h2>DOA PENUTUPAN</h2>
+        <h2>5. DOA PENUTUPAN</h2>
+        <p class="latin">ALHAMDULILLAH HIROBBIL ALAMIN</p>
+        
         <div class="sunda">
-            MUDAH MUDAHAN NGAOSAN YASIN IYEU DI TAMPI KU GUSTI ALLAH... (dst)
+            MUDAH MUDAHAN NGAOSAN YASIN IYEU DI TAMPI KU GUSTI ALLAH<br>
+            JENG MUDAH MUDAHAN ALMARHUM SARENG ALMARHUMAH<br>
+            KHUSUNA ALMARHUM BAPAK EMAD BIN ATA UMUMNA KA KARUHUN URANG SADAYANA<br>
+            DI TAMPI IMAN ISLAMNA, DIHAPUSKEN SAGALA DOSA-DOSANA, DILIPAT GANDAKEUN PAHALANA<br>
+            DI CAANGKEN SARENG DI LEGA KEUN DI ALAM KUBURNA, SARENG MUDAH MUDAHAN DI TEMPATKEN DI SYURGA NA ALLAH NU MULIA<br>
+            ATUH URANG NU NGAOSANA MUDAH-MUDAHAN MENANG KABERKAHAN KASALAMETAN MILIK REZEKI NA, AMIN YA ROBBAL ALAMIN
         </div>
-        <p class="latin" style="margin-top:15px;">ASHADUALLA ILAHAILALLAH...</p>
-        <p class="latin">ALLAHUMMAGHFIRLANA YA GHOFUR 3X</p>
+
+        <p class="latin">AUDZUBILLAHIMINASYAITONIROZIM BISMILLAHIROHMANIROHIM</p>
+        <p class="latin">ASHADUALLA ILAHAILALLAH WA ASHADU ANNA MUHAMMADAR RASULULLAH</p>
+        <p class="latin">ALLAHUMMAJ ALNI MINAT TAWWABINA WAJ'ALNI MINAL MUTATHOHIRIN WAJ'ALNNI MIN IBADIKAS SHOLIHIN</p>
+        <hr>
+        <p class="latin">ALLAHUMMAGHFIRLANA YA GHOFUR (3X)</p>
+        <p class="latin">ALLAHUMMA FIRLANA ZUNUBANA WALIWALIDINA WARHAMHUMA KAMA ROBBAYANI SOGHIRO</p>
         <p class="latin">ALLAHUMMA FIRLAHU WARHAMHU WA'AFIHI WA'FUANHU</p>
-        <p class="latin">ROBBANA ATINA FIDDUNYA HASANAH...</p>
+        <hr>
+        <p class="latin">ALLAHUMMA INNA NAS ALUKA SALAMATAN FIDDIN WA AFIYATAN FIL JASADI, WA ZIADATAN FIL ILMI, WA BARAKATAN FI RIZKI, WA TAUBATAN QOBLAL MAUT, WARAHMATAN INDAL MAUT, WA MAGHFIRATAN BA'DAL MAUT</p>
+        <p class="latin">ALLAHUMMA HAWWIN ALAINA FI SAKARATIL MAUT, WANNAJATA MINANNAR WAL AFWA INDAL HISAB</p>
+        <p class="latin">RABBANA LA TUZIGH QULUBANA BA'DA ED-HADDAITANA WAHABLANA MIL LADUNKA RAHMATAN INNAKA ANTAL WAHHAB</p>
+        <p class="latin">ROBBANA ATINA FIDDUNYA HASANAH, WAFIL AKHIROTI HASANAH WAQINA ADZABANNAR</p>
+        <p class="latin">SUBHANA RABBIKA RABBIL IZZATI AMMA YASIFUN, WASALAMUN ALAL MURSALIN WALHAMDULILLAHI RABBIL ALAMIN... <strong>AL-FATIHAH</strong></p>
     </div>
+
 </div>
 
 <footer>
-    Dibuat untuk Almarhum Bapak & Keluarga
+    Amal Jariyah untuk Almarhum Bapak Emad bin Ata
 </footer>
 
 <script>
