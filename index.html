@@ -4,44 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOA UNTUK BAPAK</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000">
     <style>
-        :root { --bg: #000000; --card: #161616; --text: #e0e0e0; --primary: #4caf50; --accent: #ffd54f; --border: #333; }
-        body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg); margin: 0; padding: 0; color: var(--text); line-height: 1.6; }
-        header { background: #000; color: var(--primary); padding: 20px; text-align: center; position: sticky; top: 0; z-index: 100; border-bottom: 2px solid var(--primary); box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
-        .container { padding: 15px; max-width: 650px; margin: auto; }
-        .card { background: var(--card); padding: 20px; border-radius: 12px; margin-bottom: 20px; border: 1px solid var(--border); }
-        h2 { border-bottom: 1px solid var(--primary); padding-bottom: 8px; color: var(--primary); font-size: 1.1rem; text-transform: uppercase; margin-top: 0; }
-        h3 { font-size: 1rem; color: var(--accent); margin-top: 15px; border-left: 4px solid var(--accent); padding-left: 10px; }
-        .bismillah { font-size: 2.2rem; text-align: center; margin: 20px 0; font-family: serif; color: #fff; }
-        .latin { font-weight: 500; color: #fff; margin-bottom: 8px; font-size: 1.1rem; }
-        .sunda { font-style: italic; background: #0d1b2a; padding: 15px; border-radius: 8px; color: #e0e0e0; border-left: 5px solid var(--primary); line-height: 1.8; }
+        :root { --bg: #000000; --card: #111111; --text: #d1d1d1; --primary: #4caf50; --accent: #ffd54f; --border: #222; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg); margin: 0; padding: 0; color: var(--text); line-height: 1.5; font-size: 0.9rem; }
+        header { background: #000; color: var(--primary); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 100; border-bottom: 2px solid var(--primary); }
+        .container { padding: 12px; max-width: 600px; margin: auto; }
+        .card { background: var(--card); padding: 15px; border-radius: 10px; margin-bottom: 15px; border: 1px solid var(--border); }
+        h2 { border-bottom: 1px solid var(--primary); padding-bottom: 5px; color: var(--primary); font-size: 0.95rem; text-transform: uppercase; margin-top: 0; }
+        h3 { font-size: 0.85rem; color: var(--accent); margin-top: 10px; border-left: 3px solid var(--accent); padding-left: 8px; }
+        .bismillah { font-size: 1.8rem; text-align: center; margin: 15px 0; font-family: serif; color: #fff; }
+        .latin { font-weight: 500; color: #fff; margin-bottom: 6px; font-size: 0.95rem; }
+        .sunda { font-style: italic; background: #07121d; padding: 12px; border-radius: 8px; color: #ccc; border-left: 4px solid var(--primary); font-size: 0.85rem; }
         
         /* Layout Khususon */
-        .khususon-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 10px; }
-        .silsilah-box { background: #1a1a1a; padding: 10px; border-radius: 8px; border: 1px dashed #444; }
-        .silsilah-list { line-height: 1.8; font-weight: bold; color: var(--accent); font-size: 0.9rem; }
+        .khususon-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+        .silsilah-box { background: #161616; padding: 8px; border-radius: 6px; border: 1px solid #333; }
+        .silsilah-list { line-height: 1.6; font-weight: bold; color: var(--accent); font-size: 0.8rem; }
 
-        .btn-yasin { display: block; width: 100%; padding: 20px; background: var(--primary); color: white; text-align: center; border-radius: 12px; font-weight: bold; font-size: 1.2rem; margin: 20px 0; cursor: pointer; border: none; box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3); }
+        .btn-yasin { display: block; width: 100%; padding: 15px; background: var(--primary); color: white; text-align: center; border-radius: 10px; font-weight: bold; font-size: 1rem; margin: 15px 0; cursor: pointer; border: none; }
         
-        /* Yasin Latin Only Styling */
-        #yasin-content { display: none; background: #000; padding: 15px; border-radius: 10px; border: 1px solid var(--primary); margin-top: 10px; }
-        .yasin-item { border-bottom: 1px solid #222; padding: 12px 0; display: flex; align-items: flex-start; }
-        .yasin-no { color: var(--primary); font-weight: bold; min-width: 35px; font-size: 1rem; }
-        .yasin-latin-text { color: var(--accent); font-style: italic; font-size: 1.1rem; line-height: 1.5; }
+        /* Yasin Latin Only */
+        #yasin-content { display: none; background: #000; padding: 10px; border-radius: 8px; border: 1px solid var(--primary); }
+        .yasin-item { border-bottom: 1px solid #1a1a1a; padding: 8px 0; display: flex; }
+        .yasin-no { color: var(--primary); font-weight: bold; min-width: 25px; font-size: 0.85rem; }
+        .yasin-latin-text { color: var(--accent); font-style: italic; font-size: 0.9rem; }
 
-        footer { text-align: center; padding: 40px 20px; color: #555; font-size: 0.8rem; }
+        footer { text-align: center; padding: 30px 10px; color: #444; font-size: 0.75rem; }
         .highlight { color: var(--primary); font-weight: bold; }
-        hr { border: 0; border-top: 1px solid #333; margin: 15px 0; }
+        hr { border: 0; border-top: 1px solid #222; margin: 10px 0; }
     </style>
 </head>
 <body>
 
 <header>
-    <div style="font-size: 1.4rem; font-weight: bold; letter-spacing: 2px;">DOA UNTUK BAPAK</div>
+    <div style="font-size: 1.1rem; font-weight: bold; letter-spacing: 1px;">DOA UNTUK BAPAK</div>
 </header>
 
 <div class="container">
-
     <div class="card">
         <div class="bismillah">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
         <p class="latin">ASTAGFIRULLAH ALAZIM (3X)</p>
@@ -60,8 +61,7 @@
 
     <div class="card">
         <h2>2. KHUSUSON AHLAL KUBUR</h2>
-        <p class="latin">WA SUMA ILA ARWAHI YA AHLAL KUBUR KHUSUSON (ALMARHUM & ALMARHUMMAH):</p>
-        
+        <p class="latin" style="font-size: 0.85rem;">WA SUMA ILA ARWAHI YA AHLAL KUBUR KHUSUSON:</p>
         <div class="khususon-grid">
             <div class="silsilah-box">
                 <h3>DARI BAPAK:</h3>
@@ -76,65 +76,38 @@
                 </div>
             </div>
         </div>
-
-        <p class="latin" style="margin-top:20px;">ABA INA WA UMATINA WAJADATINA WALI IH’WALINA WA JAMIIL MUSLIMIN WALMUSLIMAT. WAL MU’MININ WAL MU’MINAT AL AHYA’I MINHUM WAL AMWAT PIL MASRIKIL ILA MAGRIBI SAI’UL LILALHI LAHUM <span class="highlight">ALFATIHAH...</span></p>
+        <p class="latin" style="margin-top:15px; font-size: 0.85rem;">SAI’UL LILALHI LAHUM <span class="highlight">ALFATIHAH...</span></p>
     </div>
 
     <div class="card">
         <h2>3. TAHLIL & SURAH PENDEK</h2>
-        <p class="latin">LAILLAHAILLAH HU ALLAHU AKBAR (BISMILLAH... AL-IKHLAS 3X)</p>
-        <p class="latin">LAILLAHAILLAH HU ALLAHU AKBAR (BISMILLAH... AL-FALAQ 1X)</p>
-        <p class="latin">LAILLAHAILLAH HU ALLAHU AKBAR (BISMILLAH... AN-NASS 1X)</p>
-        <p class="latin">LAILLAHAILLAH HU ALLAHU AKBAR (BISMILLAH... ALFATIHAH)</p>
+        <p class="latin">AL-IKHLAS (3X), AL-FALAQ (1X), AN-NASS (1X), ALFATIHAH</p>
         <hr>
-        <p class="latin">ALIF LAM MIM ZALIKAL KITABULA ROIBAPIHI HUDA LIL MUTAKIN, ALAZINA YUMINUNA BILGOIBI WAYUKIMUNA SOLATA WAMIMA ROZAKNAHUM YUN FIKUN, WALAZINA YU MINUNA BIMA UNZILA ILAIKA WAMA UNZILA MING KOBLIK WABIL AKHIROTI HUM YUKINUN, ULA IKA ALA HUDA MIRROBIHIM WAULA IKA HUMUL MUFLIHUN, WAILAHUKUM ILA HUWAAHIBUL LAILA HAILA HUWA ROHMAN NURROHIM</p>
-        <hr>
-        <p class="latin">ALLAHULLA ILLA HA ILLA HUWAL HAYUL QOYUM, LA’TA HUZUHU SINATU WALA NA’UM, LAHUMA FISS SAMAWATI WAMA FIL’AR, MANZALAZI YASPA’U INDAHU ILA BI IZNI, YA LAMUMA BAINA AIDIHIM WAMA HOLFAHUM WALAYUHITUNA BI SAI’IN MIN ILMIHI ILA BIMASYA, WA SI’A KURSI YUHUSSAMA WATI WAL ARDO WALAYA HUZUHU HIF’ZUHUMA WAHUAWAL ALIYUL ADZIN</p>
-        <hr>
-        <p class="latin">ASTAGFIRULLAH AL AZIM (3X)</p>
-        <p class="latin">LAILAHA ILLALLAH… (13X)</p>
-        <p class="latin">LAILAHA ILLALLAH MUHAMMADAROSULLULLOH SHALLALLAHU AILAIHI WASSALAM. <span class="highlight">ALFATIHAH...</span></p>
+        <p class="latin" style="font-size: 0.85rem;">ALIF LAM MIM... (AYAT KURSI)... ASTAGFIRULLAH AL AZIM (3X)... LAILAHA ILLALLAH (13X)... <span class="highlight">ALFATIHAH...</span></p>
     </div>
 
     <button class="btn-yasin" onclick="toggleYasin()">BACA SURAT YASIN (LATIN)</button>
 
     <div id="yasin-content">
         <div id="yasin-list"></div>
-        <p style="text-align:center; color:var(--primary); font-weight:bold; padding: 20px;">Selesai Yasin, lanjut Doa Penutup di bawah.</p>
     </div>
 
     <div class="card" style="margin-top:20px;">
-        <h2>5. DOA PENUTUPAN</h2>
-        <p class="latin">ALHAMDULILLAH HIROBBIL ALAMIN</p>
-        
+        <h2>4. DOA PENUTUPAN</h2>
         <div class="sunda">
-            MUDAH MUDAHAN NGAOSAN YASIN IYEU DI TAMPI KU GUSTI ALLAH. JENG MUDAH MUDAHAN ALMARHUM SARENG ALMARHUMAH KHUSUNA ALMARHUM BAPAK EMAD BIN ATA UMUMNA KA KAUM MUSLIMIN WAL MUSLIMAT WAL MUKMININ WALMUKMINAT.<br><br>
-            MUDAH MUDAHAN ALMARHUM DI TAMPI IMAN ISLAMNA, DIHAPUSKEN SAGALA DOSA-DOSANA, DILIPAT GANDAKEUN PAHALANA, DI CAANGKEN SARENG DI LEGA KEUN DI ALAM KUBURNA, SARENG MUDAH MUDAHAN DI TEMPATKEN DI SYURGA NA ALLAH NU TERBAIK.<br><br>
-            ATUH URANG NU NGAOSANA MUDAH-MUDAHAN JADI AMAL KASAEAN SARENG NAON-NAON NU DI PIKAHAYANG MUDAH -MUDAHAN BISA KA KOBUL SARENG MENANG KABERKAHAN KASALAMETAN JEUNG DI MUDAHKEUN REZEKI NA, AMIN YA ROBBAL ALAMIN.
+            MUDAH MUDAHAN NGAOSAN YASIN IYEU DI TAMPI KU GUSTI ALLAH. KHUSUNA ALMARHUM BAPAK EMAD BIN ATA... DI TAMPI IMAN ISLAMNA, DI CAANGKEN SARENG DI LEGA KEUN DI ALAM KUBURNA... AMIN.
         </div>
-
-        <p class="latin" style="margin-top:20px;">AUDZUBILLAHIMINASYAITONIROZIM BISMILLAHIROHMANIROHIM</p>
-        <p class="latin">ASHADUALLA ILAHAILALLAH WA ASHADU ANNA MUHAMMADAR RASULULLAH</p>
-        <p class="latin">ALLAHUMMAJ ALNI MINAT TAWWABINA WAJ'ALNI MINAL MUTATHOHIRIN WAJ'ALNNI MIN IBADIKAS SHOLIHIN</p>
         <hr>
-        <p class="latin">ALLAHUMMAGHFIRLANA YA GHOFUR (3X)</p>
-        <p class="latin">ALLAHUMMA FIRLANA ZUNUBANA WALIWALIDINA WARHAMHUMA KAMA ROBBAYANI SOGHIRO</p>
-        <p class="latin">ALLAHUMMA FIRLAHU WARHAMHU WA'AFIHI WA'FUANHU</p>
-        <hr>
-        <p class="latin">ALLAHUMMA INNA NAS ALUKA SALAMATAN FIDDIN, WA AFIYATAN FIL JASADI, WA ZIADATAN FIL ILMI, WA BARAKATAN FI RIZKI, WA TAUBATAN QOBLAL MAUT, WARAHMATAN INDAL MAUT, WA MAGHFIRATAN BA'DAL MAUT</p>
-        <p class="latin">ALLAHUMMA HAWWIN ALAINA FI SAKARATIL MAUT, WANNAJATA MINANNAR WAL AFWA INDAL HISAB</p>
-        <p class="latin">RABBANA LA TUZIGH QULUBANA BA'DA ED-HADDAITANA WAHABLANA MIL LADUNKA RAHMATAN INNAKA ANTAL WAHHAB</p>
+        <p class="latin">ALLAHUMMAGHFIRLAHU WARHAMHU WA'AFIHI WA'FUANHU</p>
         <p class="latin">ROBBANA ATINA FIDDUNYA HASANAH, WAFIL AKHIROTI HASANAH WAQINA ADZABANNAR</p>
-        <p class="latin">SUBHANA RABBIKA RABBIL IZZATI AMMA YASIFUN, WASALAMUN ALAL MURSALIN WALHAMDULILLAHI RABBIL ALAMIN... <span class="highlight">AL-FATIHAH</span></p>
+        <p class="latin">WALHAMDULILLAHI RABBIL ALAMIN... <span class="highlight">AL-FATIHAH</span></p>
     </div>
-
 </div>
 
-<footer>
-    Dibuat dengan tulus untuk Almarhum Bapak Emad bin Ata & Keluarga
-</footer>
+<footer>Dibuat untuk Almarhum Bapak Emad bin Ata</footer>
 
 <script>
+    // Data Yasin Latin (Gua potong di sini untuk contoh, aslinya isi lengkap sampai 83)
     const yasinLatinData = [
         {no: 1, lt: "Yaa-Siiin"},
         {no: 2, lt: "Wal-Qur-aanil-Hakiim"},
@@ -225,24 +198,18 @@
     yasinLatinData.forEach(item => {
         const div = document.createElement('div');
         div.className = 'yasin-item';
-        div.innerHTML = `
-            <div class="yasin-no">${item.no}</div>
-            <div class="yasin-latin-text">${item.lt}</div>
-        `;
+        div.innerHTML = `<div class="yasin-no">${item.no}</div><div class="yasin-latin-text">${item.lt}</div>`;
         listDiv.appendChild(div);
     });
 
     function toggleYasin() {
         var x = document.getElementById("yasin-content");
-        var btn = document.querySelector(".btn-yasin");
-        if (x.style.display === "block") {
-            x.style.display = "none";
-            btn.innerHTML = "BACA SURAT YASIN (LATIN)";
-        } else {
-            x.style.display = "block";
-            btn.innerHTML = "TUTUP SURAT YASIN";
-            x.scrollIntoView({ behavior: 'smooth' });
-        }
+        x.style.display = (x.style.display === "block") ? "none" : "block";
+    }
+
+    // Register Service Worker untuk PWA
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js');
     }
 </script>
 </body>
