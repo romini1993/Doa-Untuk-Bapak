@@ -11,10 +11,16 @@
         header { background: #000; color: var(--primary); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 100; border-bottom: 2px solid var(--primary); box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
         .container { padding: 12px; max-width: 600px; margin: auto; }
         .card { background: var(--card); padding: 15px; border-radius: 10px; margin-bottom: 15px; border: 1px solid var(--border); }
-        h2 { border-bottom: 1px solid var(--primary); padding-bottom: 5px; color: var(--primary); font-size: 0.95rem; text-transform: uppercase; margin-top: 0; }
+        
+        /* Ukuran Header Section disamakan */
+        h2 { border-bottom: 1px solid var(--primary); padding-bottom: 5px; color: var(--primary); font-size: 0.9rem; text-transform: uppercase; margin-top: 0; }
         h3 { font-size: 0.85rem; color: var(--accent); margin-top: 10px; border-left: 3px solid var(--accent); padding-left: 8px; }
-        .bismillah { font-size: 1.8rem; text-align: center; margin: 15px 0; font-family: serif; color: #fff; }
-        .latin { font-weight: 500; color: #fff; margin-bottom: 6px; font-size: 0.95rem; line-height: 1.4; }
+        
+        /* Ukuran Bismillah disesuaikan agar tidak terlalu raksasa */
+        .bismillah { font-size: 1.5rem; text-align: center; margin: 15px 0; font-family: serif; color: #fff; }
+        
+        /* Ukuran Latin disamakan semua */
+        .latin { font-weight: 500; color: #fff; margin-bottom: 6px; font-size: 0.9rem; line-height: 1.4; }
         .sunda { font-style: italic; background: #0d1b2a; padding: 12px; border-radius: 8px; color: #e0e0e0; border-left: 5px solid var(--primary); line-height: 1.6; font-size: 0.85rem; }
         
         /* Khususon Grid 2 Kolom */
@@ -24,13 +30,13 @@
 
         /* Button Sticky Style */
         .btn-wrapper { position: sticky; top: 65px; z-index: 90; padding: 5px 0; background: var(--bg); }
-        .btn-yasin { display: block; width: 100%; padding: 15px; background: var(--primary); color: white; text-align: center; border-radius: 10px; font-weight: bold; font-size: 1rem; cursor: pointer; border: none; box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3); }
+        .btn-yasin { display: block; width: 100%; padding: 15px; background: var(--primary); color: white; text-align: center; border-radius: 10px; font-weight: bold; font-size: 0.95rem; cursor: pointer; border: none; box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3); }
         
         /* Yasin Latin Only */
         #yasin-content { display: none; background: #000; padding: 10px; border-radius: 8px; border: 1px solid var(--primary); margin-top: 10px; }
         .yasin-item { border-bottom: 1px solid #222; padding: 10px 0; display: flex; align-items: flex-start; }
         .yasin-no { color: var(--primary); font-weight: bold; min-width: 25px; font-size: 0.8rem; margin-top: 2px; }
-        .yasin-text-latin { color: var(--accent); font-style: italic; font-size: 0.95rem; line-height: 1.4; }
+        .yasin-text-latin { color: var(--accent); font-style: italic; font-size: 0.9rem; line-height: 1.4; }
 
         footer { text-align: center; padding: 30px 20px; color: #555; font-size: 0.75rem; }
         .highlight { color: var(--primary); font-weight: bold; }
@@ -40,7 +46,7 @@
 <body>
 
 <header>
-    <div style="font-size: 1.1rem; font-weight: bold; letter-spacing: 1px;">DOA UNTUK BAPAK</div>
+    <div style="font-size: 1rem; font-weight: bold; letter-spacing: 1px;">DOA UNTUK BAPAK</div>
 </header>
 
 <div class="container">
@@ -80,7 +86,7 @@
             </div>
         </div>
 
-        <p class="latin" style="margin-top:15px; font-size: 0.85rem;">ABA INA WA UMATINA WAJADATINA WALI IH’WALINA WA JAMIIL MUSLIMIN WALMUSLIMAT. WAL MU’MININ WAL MU’MINAT AL AHYA’I MINHUM WAL AMWAT PIL MASRIKIL ILA MAGRIBI SAI’UL LILALHI LAHUM <span class="highlight">ALFATIHAH...</span></p>
+        <p class="latin" style="margin-top:15px;">ABA INA WA UMATINA WAJADATINA WALI IH’WALINA WA JAMIIL MUSLIMIN WALMUSLIMAT. WAL MU’MININ WAL MU’MINAT AL AHYA’I MINHUM WAL AMWAT PIL MASRIKIL ILA MAGRIBI SAI’UL LILALHI LAHUM <span class="highlight">ALFATIHAH...</span></p>
     </div>
 
     <div class="card">
@@ -90,9 +96,9 @@
         <p class="latin">LAILLAHAILLAH HU ALLAHU AKBAR (BISMILLAH... AN-NASS 1X)</p>
         <p class="latin">LAILLAHAILLAH HU ALLAHU AKBAR (BISMILLAH... ALFATIHAH)</p>
         <hr>
-        <p class="latin" style="font-size: 0.85rem;">BISMILLAH...<br>ALIF LAM MIM ZALIKAL KITABULA ROIBAPIHI HUDA LIL MUTAKIN, ALAZINA YUMINUNA BILGOIBI WAYUKIMUNA SOLATA WAMIMA ROZAKNAHUM YUN FIKUN, WALAZINA YU MINUNA BIMA UNZILA ILAIKA WAMA UNZILA MING KOBLIK WABIL AKHIROTI HUM YUKINUN, ULA IKA ALA HUDA MIRROBIHIM WAULA IKA HUMUL MUFLIHUN, WAILAHUKUM ILA HUWAAHIBUL LAILA HAILA HUWA ROHMAN NURROHIM</p>
+        <p class="latin">BISMILLAH...<br>ALIF LAM MIM ZALIKAL KITABULA ROIBAPIHI HUDA LIL MUTAKIN, ALAZINA YUMINUNA BILGOIBI WAYUKIMUNA SOLATA WAMIMA ROZAKNAHUM YUN FIKUN, WALAZINA YU MINUNA BIMA UNZILA ILAIKA WAMA UNZILA MING KOBLIK WABIL AKHIROTI HUM YUKINUN, ULA IKA ALA HUDA MIRROBIHIM WAULA IKA HUMUL MUFLIHUN, WAILAHUKUM ILA HUWAAHIBUL LAILA HAILA HUWA ROHMAN NURROHIM</p>
         <hr>
-        <p class="latin" style="font-size: 0.85rem;">ALLAHULLA ILLA HA ILLA HUWAL HAYUL QOYUM, LA’TA HUZUHU SINATU WALA NA’UM, LAHUMA FISS SAMAWATI WAMA FIL’AR, MANZALAZI YASPA’U INDAHU ILA BI IZNI, YA LAMUMA BAINA AIDIHIM WAMA HOLFAHUM WALAYUHITUNA BI SAI’IN MIN ILMIHI ILA BIMASYA, WA SI’A KURSI YUHUSSAMA WATI WAL ARDO WALAYA HUZUHU HIF’ZUHUMA WAHUAWAL ALIYUL ADZIN</p>
+        <p class="latin">ALLAHULLA ILLA HA ILLA HUWAL HAYUL QOYUM, LA’TA HUZUHU SINATU WALA NA’UM, LAHUMA FISS SAMAWATI WAMA FIL’AR, MANZALAZI YASPA’U INDAHU ILA BI IZNI, YA LAMUMA BAINA AIDIHIM WAMA HOLFAHUM WALAYUHITUNA BI SAI’IN MIN ILMIHI ILA BIMASYA, WA SI’A KURSI YUHUSSAMA WATI WAL ARDO WALAYA HUZUHU HIF’ZUHUMA WAHUAWAL ALIYUL ADZIN</p>
         <hr>
         <p class="latin">ASTAGFIRULLAH AL AZIM (3X)<br>AFDOLU ZIQRI PA’LAM ANAHU ….<br>LAILAHA ILLALLAH… HAYUM MABJUD ….<br>LAILAHA ILLALLAH… HAYUM MA’BUD .…
 <br>LAILAHA ILLALLAH… HAYUM BAK ….
@@ -127,7 +133,7 @@
         <p class="latin">ALLAHUMMA FIRLANA ZUNUBANA WALIWALIDINA WARHAMHUMA KAMA ROBBAYANI SOGHIRO</p>
         <p class="latin">ALLAHUMMA FIRLAHU WARHAMHU WA'AFIHI WA'FUANHU</p>
         <hr>
-        <p class="latin" style="font-size: 0.85rem;">ALLAHUMMA INNA NAS ALUKA SALAMATAN FIDDIN, <br>WA AFIYATAN FIL JASADI, <br>WA ZIADATAN FIL ILMI, <br>WA BARAKATAN FI RIZKI, <br>WA TAUBATAN QOBLAL MAUT, <br>WARAHMATAN INDAL MAUT, <br>WA MAGHFIRATAN BA'DAL MAUT. <br><br>ALLAHUMMA HAWWIN ALAINA FI SAKARATIL MAUT, <br>WANNAJATA MINANNAR WAL AFWA INDAL 
+        <p class="latin">ALLAHUMMA INNA NAS ALUKA SALAMATAN FIDDIN, <br>WA AFIYATAN FIL JASADI, <br>WA ZIADATAN FIL ILMI, <br>WA BARAKATAN FI RIZKI, <br>WA TAUBATAN QOBLAL MAUT, <br>WARAHMATAN INDAL MAUT, <br>WA MAGHFIRATAN BA'DAL MAUT. <br><br>ALLAHUMMA HAWWIN ALAINA FI SAKARATIL MAUT, <br>WANNAJATA MINANNAR WAL AFWA INDAL 
 HISAB, <br>RABBANA LA TUZIGH QULUBANA BA'DA ED-HADDAITANA WAHABLANA MIL LADUNKA RAHMATAN INNAKA ANTAL WAHHAB <br><br>RABBANA ATINA FIDDUNYA HASANAH, <br>WAFIL AKHIROTI HASANAH WAQINA ADZABANNAR. <br>SUBHANA RABBIKA RABBIL IZZATI AMMA YASIFUN, <br>WASALAMUN ALAL MURSALIN WALHAMDULILLAHI RABBIL ALAMIN. <span class="highlight">AL-FATIHAH</span></p>
     </div>
 
