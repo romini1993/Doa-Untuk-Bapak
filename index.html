@@ -10,17 +10,23 @@
         header { background: #000; color: var(--primary); padding: 20px; text-align: center; position: sticky; top: 0; z-index: 100; border-bottom: 2px solid var(--primary); }
         .container { padding: 15px; max-width: 650px; margin: auto; }
         .card { background: var(--card); padding: 20px; border-radius: 12px; margin-bottom: 20px; border: 1px solid #333; }
-        h2 { border-bottom: 1px solid var(--primary); padding-bottom: 8px; color: var(--primary); font-size: 1.1rem; text-transform: uppercase; margin-top: 0; }
+        h2 { border-bottom: 1px solid var(--primary); padding-bottom: 8px; color: var(--primary); font-size: 1.1rem; text-transform: uppercase; margin-top: 0; margin-bottom: 15px; }
         .bismillah { font-size: 2.2rem; text-align: center; margin: 20px 0; font-family: serif; color: #fff; }
-        .latin-bold { font-weight: bold; color: #fff; font-size: 1.1rem; }
-        .sunda { font-style: italic; background: #0d1b2a; padding: 15px; border-radius: 8px; border-left: 5px solid var(--primary); }
-        .btn-yasin { display: block; width: 100%; padding: 20px; background: var(--primary); color: white; text-align: center; border-radius: 12px; font-weight: bold; font-size: 1.2rem; margin: 20px 0; cursor: pointer; border: none; transition: 0.3s; }
-        .btn-yasin:active { transform: scale(0.98); background: #388e3c; }
+        .latin-bold { font-weight: bold; color: #fff; font-size: 1.1rem; margin: 10px 0; }
+        
+        /* Style Kolom Khususon */
+        .khususon-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .silsilah-box { background: #1a1a1a; padding: 10px; border-radius: 8px; border: 1px dashed #444; }
+        .silsilah-box h3 { font-size: 0.9rem; color: var(--primary); margin-top: 0; text-align: center; border-bottom: 1px solid #333; padding-bottom: 5px; }
+        .name-list { font-size: 0.85rem; color: var(--accent); font-weight: bold; line-height: 1.8; }
+
+        .sunda { font-style: italic; background: #0d1b2a; padding: 15px; border-radius: 8px; border-left: 5px solid var(--primary); margin: 15px 0; }
+        .btn-yasin { display: block; width: 100%; padding: 20px; background: var(--primary); color: white; text-align: center; border-radius: 12px; font-weight: bold; font-size: 1.2rem; margin: 20px 0; cursor: pointer; border: none; }
         #yasin-content { display: none; background: #000; padding: 10px; border-radius: 10px; border: 1px solid var(--primary); margin-bottom: 20px; }
         .yasin-item { border-bottom: 1px solid #222; padding: 15px 0; }
         .yasin-arab { font-size: 1.8rem; text-align: right; color: #fff; direction: rtl; margin-bottom: 10px; font-family: serif; line-height: 2.5; }
         .yasin-latin { color: var(--accent); font-style: italic; font-size: 1rem; }
-        .yasin-no { color: var(--primary); font-weight: bold; margin-bottom: 5px; display: inline-block; border: 1px solid var(--primary); padding: 2px 8px; border-radius: 50%; font-size: 0.8rem; }
+        .yasin-no { color: var(--primary); font-weight: bold; border: 1px solid var(--primary); padding: 2px 8px; border-radius: 50%; font-size: 0.8rem; }
     </style>
 </head>
 <body>
@@ -33,45 +39,88 @@
     <div class="card">
         <div class="bismillah">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
         <p class="latin-bold">ASTAGFIRULLAH ALAZIM 3X</p>
-        <p>1. ILA HADROTIN NABI... ALFATIHAH</p>
-        <p>2. WA ILA ARWAHI ABA IHI... ALFATIHAH</p>
-        <p>3. WA SUMA ILA ARWAHI SEH ABDUL KODIR JAELANI... ALFATIHAH</p>
+        <p>1. ILA HADROTIN NABIYYIL MUSTHOFA SAYYIDINA MUHAMMADIN S.A.W WA 'ALA ALIHI WA ASHABIHI WA AZWAJIHI WA DZURRIYATIHI WA AHLI BAITIHI KROM... ALFATIHAH</p>
+        <p>2. WA ILA ARWAHI ABA IHI WA IKHWANIHI MINAL ANBIYAI WAL MURSALIN WA ILA MALAIKATIL MUQORROBIN WA KARUBIYYIN WAS SYUHADAI WAS SHOLIHIN... ALFATIHAH</p>
+        <p>3. WA SUMA ILA ARWAHI SEH ABDUL KODIR JAELANI WA SEH JUNAIDIL BAGDADI WA SEH SYARIF HIDAYATULLAH WA JAMI'IL AULIAI ALLAH... ALFATIHAH</p>
     </div>
 
     <div class="card">
-        <h2>KHUSUSON ALMARHUM & ALMARHUMMAH</h2>
-        <p style="color:var(--accent); font-weight:bold; font-size: 0.9rem;">EMAD BIN ATA, MUNAH BINTI ATA, ATA BIN SINAN, SATI BINTI SAIN, APRAK BIN WIRI, SAIN BIN PULOH, LAISAH BINTI LIUN, ENCEP BIN JANIM, MANI BINTI SINAN, KANDI BIN ATA, ENCIM BIN JANIM, AMUNG BIN SINAN, SINAN BIN EJEN, SIAH BINTI SINAN, UDIK BIN SINAN, DACEM BINTI SINAN, AMIT BIN SINAN, SAMAH BINTI SINAN, MINING BIN GADEL, DASI BINTI MIUN, DACING BIN MINING, GADEL BIN PULAN, INI BINTI PULAN, MIUN BIN PULAN, BENIL BINTI PULAN, CEKIT BIN MIUN, BENIN BIN MIUN, LEOK BIN MIUN, INENG BIN GADEL, BOIN BIN GADEL, KARTINAH BINTI RAMIN.</p>
+        <h2>KHUSUSON BIN & BINTI</h2>
+        <div class="khususon-grid">
+            <div class="silsilah-box">
+                <h3>Silsilah Bapak</h3>
+                <div class="name-list">
+                    EMAD BIN ATA<br>
+                    ATA BIN SINAN<br>
+                    SATI BINTI SAIN<br>
+                    SAIN BIN PULOH<br>
+                    ENCEP BIN JANIM<br>
+                    KANDI BIN ATA<br>
+                    AMUNG BIN SINAN<br>
+                    SINAN BIN EJEN<br>
+                    UDIK BIN SINAN<br>
+                    AMIT BIN SINAN<br>
+                    DACING BIN MINING<br>
+                    GADEL BIN PULAN<br>
+                    MIUN BIN PULAN<br>
+                    BENIN BIN MIUN<br>
+                    CEKIT BIN MIUN<br>
+                    LEOK BIN MIUN<br>
+                    BOIN BIN GADEL
+                </div>
+            </div>
+            <div class="silsilah-box">
+                <h3>Silsilah Ibu</h3>
+                <div class="name-list">
+                    MUNAH BINTI ATA<br>
+                    APRAK BIN WIRI<br>
+                    LAISAH BINTI LIUN<br>
+                    MANI BINTI SINAN<br>
+                    ENCIM BIN JANIM<br>
+                    SIAH BINTI SINAN<br>
+                    DACEM BINTI SINAN<br>
+                    SAMAH BINTI SINAN<br>
+                    MINING BIN GADEL<br>
+                    DASI BINTI MIUN<br>
+                    INI BINTI PULAN<br>
+                    BENIL BINTI PULAN<br>
+                    INENG BIN GADEL<br>
+                    KARTINAH BINTI RAMIN
+                </div>
+            </div>
+        </div>
     </div>
 
-    <button class="btn-yasin" onclick="toggleYasin()">KLIK BACA SURAT YASIN (83 AYAT)</button>
+    <button class="btn-yasin" onclick="toggleYasin()">BACA SURAT YASIN (83 AYAT)</button>
 
     <div id="yasin-content">
-        <div class="bismillah">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
         <div id="yasin-list"></div>
     </div>
 
-    <div class="card" style="margin-top:20px;">
+    <div class="card">
         <h2>DOA PENUTUPAN</h2>
-        <div class="sunda">MUDAH MUDAHAN NGAOSAN YASIN IYEU DI TAMPI KU GUSTI ALLAH...</div>
-        <p class="latin-bold" style="margin-top:10px;">ALLAHUMMAGHFIRLAHU WARHAMHU WA'AFIHI WA'FUANHU... ALFATIHAH</p>
+        <div class="sunda">
+            MUDAH MUDAHAN NGAOSAN YASIN IYEU DI TAMPI KU GUSTI ALLAH DI JANTEUN KEUN CAANG DI KUBUR NA, DI JANTEUN KEUN IBADAH KANA JANTEUN KEUN SYAFAAT DI YAUMIL JAZA, KHUSUSON KAGAL ALMARHUM BAPAK EMAD BIN ATA JEUNG KANA JAMI'IL MUSLIMIN WAL MUSLIMAT AL AHYA I MINHUM WAL AMWAT.
+        </div>
+        <p class="latin-bold">ALLAHUMMAGHFIRLAHU WARHAMHU WA'AFIHI WA'FUANHU... ALFATIHAH</p>
     </div>
 </div>
 
 <script>
     const yasinData = [
         {no: 1, ar: "يٰسٓ", lt: "Yaa-Siiin"},
-        {no: 2, ar: "وَالۡقُرۡاٰنِ Al-HAKIIM", lt: "Wal-Qur-aanil-Hakiim"},
+        {no: 2, ar: "وَالۡقُرۡاٰنِ الۡحَكِيۡمِ", lt: "Wal-Qur-aanil-Hakiim"},
         {no: 3, ar: "اِنَّكَ لَمِنَ الۡمُرۡسَلِيۡنَۙ", lt: "Innaka laminal mursaliin"},
         {no: 4, ar: "عَلٰى صِرَاطٍ مُّسۡتَقِيۡمٍؕ‏", lt: "'Alaa Siraatim Mustaqiim"},
         {no: 5, ar: "تَنۡزِيۡلَ الۡعَزِيۡزِ الرَّحِيۡمِ", lt: "Tanziilal 'Aziizir Rahiim"},
         {no: 6, ar: "لِتُنۡذِرَ قَوۡمًا مَّاۤ اُنۡذِرَ اٰبَآؤُهُمۡ فَهُمۡ غٰفِلُوۡنَ", lt: "Litunzira qawmam maaa unzira aabaaa'uhum"},
-        {no: 7, ar: "لَقَدۡ حَقَّ الۡقَوۡلُ عَلٰٓى اَكۡثَرِهِمۡ فَهُمۡ لَا يُؤۡمِنُوۡنَ", lt: "Laqad haqqal qawlu 'alaaa aksarihim"},
+        {no: 7, ar: "لَقَدۡ حَقَّ الۡقَوۡلُ عَلٰٓى اَكۡثَرِهِمۡ فَهُمۡ لَا يُؤۡmِنُوۡنَ", lt: "Laqad haqqal qawlu 'alaaa aksarihim"},
         {no: 8, ar: "اِنَّا جَعَلۡنَا فِىۡۤ اَعۡنَاقِهِمۡ اَغۡلٰلًا فَهِىَ اِلَى الۡاَ ذۡقَانِ فَهُمۡ مُّقۡمَحُوۡنَ", lt: "Innaa ja'alnaa fiii a'naaqihim aghlaalan"},
         {no: 9, ar: "وَجَعَلۡنَا مِنۡۢ بَيۡنِ اَيۡدِيۡهِمۡ سَدًّا وَّمِنۡ خَلۡفِهِمۡ سَدًّا فَاَغۡشَيۡنٰهُمۡ فَهُمۡ لَا يُبۡصِرُوۡنَ", lt: "Wa ja'alnaa mim baini aydiihim saddan"},
         {no: 10, ar: "وَسَوَآءٌ عَلَيۡهِمۡ ءَاَنۡذَرۡتَهُمۡ اَمۡ لَمۡ تُنۡذِرۡهُمۡ لَا يُؤۡمِنُوۡنَ", lt: "Wa sawaaa'un 'alaihim 'a-anzartahum"},
         {no: 11, ar: "اِنَّمَا تُنۡذِرُ مَنِ اتَّبَعَ الذِّكۡرَ وَخَشِىَ الرَّحۡمٰنَ بِالۡغَيۡبِ", lt: "Innamaa tunziru manit taba 'az-Zikra"},
         {no: 12, ar: "اِنَّا نَحۡنُ نُحۡىِ الۡمَوۡتٰى وَنَكۡتُبُ مَا قَدَّمُوۡا وَاٰثَارَهُمۡ", lt: "Innaa Nahnu nuhyil mawtaa"},
-        {no: 13, ar: "وَاضۡرِبۡ لَهُمۡ مَّثَلًا اَصۡحٰبَ الۡقَرۡيَةِ اِذۡ جَآءَهَا الۡمُرۡسَلُوۡنَ", lt: "Wadrib lahum masalan Ashaabal Qaryatih"},
+        {no: 13, ar: "وَاضۡرِبۡ لَهُمۡ mَّثَلًا اَصۡحٰبَ الۡقَرۡيَةِ اِذۡ جَآءَهَا الۡمُرۡسَلُوۡنَ", lt: "Wadrib lahum masalan Ashaabal Qaryatih"},
         {no: 14, ar: "اِذۡ اَرۡسَلۡنَاۤ اِلَيۡهِمُ اثۡنَيۡنِ فَكَذَّبُوۡهُمَا فَعَزَّزۡنَا بِثَالِثٍ", lt: "Iz arsalnaaa ilaihimusnaini fakazzabuuhumaa"},
         {no: 15, ar: "قَالُوۡا مَاۤ اَنۡـتُمۡ اِلَّا بَشَرٌ مِّثۡلُـنَا", lt: "Qooluu maaa antum illaa basharum mislunaa"},
         {no: 16, ar: "قَالُوۡا رَبُّنَا يَعۡلَمُ اِنَّاۤ اِلَيۡكُمۡ لَمُرۡسَلُوۡنَ", lt: "Qooluu Rabbunaa ya'lamu innaaa ilaikum"},
@@ -83,14 +132,14 @@
         {no: 22, ar: "وَمَا لِىَ لَاۤ اَعۡبُدُ الَّذِىۡ فَطَرَنِىۡ وَاِلَيۡهِ تُرۡجَعُوۡنَ", lt: "Wa maa liya laaa a'budul lazii fataranii"},
         {no: 23, ar: "ءَاَ تَّخِذُ مِنۡ دُوۡنِهٖۤ اٰلِهَةً اِنۡ يُّرِدۡنِ الرَّحۡمٰنُ بِضُرٍّ", lt: "'A-attakhizu min duunihiii aalihatan"},
         {no: 24, ar: "اِنِّىۡۤ اِذًا لَّفِىۡ ضَلٰلٍ مُّبِيۡنٍ", lt: "Inniii izal-lafii dalaa-lim-mubiin"},
-        {no: 25, ar: "اِنِّىۡۤ اٰمَنۡتُ بِرَبِّكُمۡ فَاسۡمَعُوۡنِ", lt: "Inniii aamantu bi Rabbikum fasma'uun"},
+        {no: 25, ar: "اِنِّىۡۤ اٰمَنۡتُ بِرَبِّكُمۡ فَاسۡmَعُوۡنِ", lt: "Inniii aamantu bi Rabbikum fasma'uun"},
         {no: 26, ar: "قِيۡلَ ادۡخُلِ الۡجَـنَّةَ قَالَ يٰلَيۡتَ قَوۡمِىۡ يَعۡلَمُوۡنَ", lt: "Qiilad khulil Jannnah"},
         {no: 27, ar: "بِمَا غَفَرَلِىۡ رَبِّىۡ وَجَعَلَنِىۡ مِنَ الۡمُكۡرَمِيۡنَ", lt: "Bimaa ghafara lii Rabbii"},
         {no: 28, ar: "وَمَاۤ اَنۡزَلۡنَا عَلٰى قَوۡمِهٖ مِنۡۢ بَعۡدِهٖ مِنۡ جُنۡدٍ", lt: "Wa maaa anzalnaa 'alaa qawmihii"},
         {no: 29, ar: "اِنۡ كَانَتۡ اِلَّا صَيۡحَةً وَّاحِدَةً فَاِذَا هُمۡ خٰمِدُوۡنَ", lt: "In kaanat illaa saihatanw waahidatan"},
         {no: 30, ar: "يٰحَسۡرَةً عَلَى الۡعِبَادِ مَا يَاۡتِيۡهِمۡ مِّنۡ رَّسُوۡلٍ", lt: "Yaa hasratan 'alal 'ibaad"},
         {no: 31, ar: "اَلَمۡ يَرَوۡا كَمۡ اَهۡلَـكۡنَا قَبۡلَهُمۡ مِّنَ الۡقُرُوۡنِ", lt: "Alam yaraw kam ahlak naa qablahum"},
-        {no: 32, ar: "وَاِنۡ كُلٌّ لَّمَّا جَمِيۡعٌ لَّدَيۡنَا مُحۡضَرُوۡنَ", lt: "Wa in kullul lammaa jamii'ul-ladainaa"},
+        {no: 32, ar: "وَاِنۡ كُلٌّ لَّmَّا جَمِيۡعٌ لَّدَيۡنَا مُحۡضَرُوۡنَ", lt: "Wa in kullul lammaa jamii'ul-ladainaa"},
         {no: 33, ar: "وَاٰيَةٌ لَّهُمُ الۡاَرۡضُ الۡمَيۡتَةُ اَحۡيَيۡنٰهَا", lt: "Wa Aayatul lahumul ardul maitatu"},
         {no: 34, ar: "وَجَعَلۡنَا فِيۡهَا جَنّٰتٍ مِّنۡ نَّخِيۡلٍ وَّاَعۡنَابٍ", lt: "Wa ja'alnaa fiihaa jannaatim"},
         {no: 35, ar: "لِيَاۡكُلُوۡا مِنۡ ثَمَرِهٖ وَمَا عَمِلَـتۡهُ اَيۡدِيۡهِمۡ", lt: "Liyaakuluu min samarihii"},
@@ -102,7 +151,7 @@
         {no: 41, ar: "وَاٰيَةٌ لَّهُمۡ اَنَّا حَمَلۡنَا ذُرِّيَّتَهُمۡ", lt: "Wa Aayatul lahum annaa hamalnaa"},
         {no: 42, ar: "وَخَلَقۡنَا لَهُمۡ مِّنۡ مِّثۡلِهٖ مَا يَرۡكَبُوۡنَ", lt: "Wa khalaqnaa lahum mim-mislihii"},
         {no: 43, ar: "وَاِنۡ نَّشَاۡ نُغۡرِقۡهُمۡ فَلَا صَرِيۡخَ لَهُمۡ", lt: "Wa in nashaa nughriqhum"},
-        {no: 44, ar: "اِلَّا رَحۡمَةً مِّنَّا وَمَتَاعًا اِلٰى حِيۡنٍ", lt: "Illaa rahmatam minnaa"},
+        {no: 44, ar: "اِلَّا رَحۡmَةً مِّنَّا وَمَتَاعًا اِلٰى حِيۡنٍ", lt: "Illaa rahmatam minnaa"},
         {no: 45, ar: "وَاِذَا قِيۡلَ لَهُمُ اتَّقُوۡا مَا بَيۡنَ اَيۡدِيۡكُمۡ", lt: "Wa izaa qiila lahumuttaquu"},
         {no: 46, ar: "وَمَا تَاۡتِيۡهِمۡ مِّنۡ اٰيَةٍ مِّنۡ اٰيٰتِ رَبِّهِمۡ", lt: "Wa maa taatiihim min aayatim"},
         {no: 47, ar: "وَاِذَا قِيۡلَ لَهُمۡ اَنۡفِقُوۡا مِمَّا رَزَقَكُمُ اللّٰهُ", lt: "Wa izaa qiila lahum anfiquu"},
@@ -127,7 +176,7 @@
         {no: 66, ar: "وَلَوۡ نَشَآءُ لَـطَمَسۡنَا عَلٰٓى اَعۡيُنِهِمۡ", lt: "Wa law nashaaa'u lata masna"},
         {no: 67, ar: "وَلَوۡ نَشَآءُ لَمَسَخۡنٰهُمۡ عَلٰى مَكَانَتِهِمۡ", lt: "Wa law nashaaa'u lamasakhnaahum"},
         {no: 68, ar: "وَمَنۡ نُّعَمِّرۡهُ نُـنَكِّسۡهُ فِى الۡخَـلۡقِ", lt: "Wa man nu 'ammirhu nunakkishu"},
-        {no: 69, ar: "وَمَا عَلَّمۡنٰهُ الشِّعۡرَ وَما يَنۢبَغِى لَهٗ", lt: "Wa maa 'allamnaahush shi'ra"},
+        {no: 69, ar: "وَمَا عَلَّmۡنٰهُ الشِّعۡرَ وَما يَنۢبَغِى لَهٗ", lt: "Wa maa 'allamnaahush shi'ra"},
         {no: 70, ar: "لِّيُنۡذِرَ مَنۡ كَانَ حَيًّا وَّيَحِقَّ الۡقَوۡلُ", lt: "Liyunzira man kaana haiyanw"},
         {no: 71, ar: "اَوَلَمۡ يَرَوۡا اَنَّا خَلَقۡنَا لَهُمۡ مِّمَّا عَمِلَتۡ", lt: "Awalam yaraw annaa khalaqnaa"},
         {no: 72, ar: "وَذَلَّـلۡنٰهَا لَهُمۡ فَمِنۡهَا رَكُوۡبُهُمۡ", lt: "Wa zallalnaahaa lahum"},
@@ -139,14 +188,12 @@
         {no: 78, ar: "وَضَرَبَ لَـنَا مَثَلًا وَّ نَسِىَ خَلۡقَهٗ", lt: "Wa daraba lanaa maslanw"},
         {no: 79, ar: "قُلۡ يُحۡيِيۡهَا الَّذِىۡۤ اَنۡشَاَهَاۤ", lt: "Qul yuh yiihal laziii ansha"},
         {no: 80, ar: "اۨلَّذِىۡ جَعَلَ لَـكُمۡ مِّنَ الشَّجَرِ الۡاَخۡضَرِ", lt: "Allazii ja'ala lakum minash"},
-        {no: 81, ar: "اَوَلَيۡسَ الَّذِىۡ خَلَقَ السَّمٰوٰتِ", lt: "Awa laisal lazii khalaqas"},
+        {no: 81, ar: "اَوَلَيۡسَ الَّذِىۡ خَلَقَ السَّmٰوٰتِ", lt: "Awa laisal lazii khalaqas"},
         {no: 82, ar: "اِنَّمَاۤ اَمۡرُهٗۤ اِذَاۤ اَرَادَ شَیْــٴً۬ــا", lt: "Innamaa amruhuuu izaaa araada"},
         {no: 83, ar: "فَسُبۡحٰنَ الَّذِىۡ بِيَدِهٖ مَلَـكُوۡتُ كُلِّ شَىۡءٍ", lt: "Fa Subhaanal lazii biyadihii"}
     ];
 
     const listDiv = document.getElementById('yasin-list');
-    
-    // Render semua ayat
     yasinData.forEach(item => {
         const div = document.createElement('div');
         div.className = 'yasin-item';
@@ -160,10 +207,9 @@
 
     function toggleYasin() {
         const content = document.getElementById("yasin-content");
-        if (content.style.display === "block") {
-            content.style.display = "none";
-        } else {
-            content.style.display = "block";
+        content.style.display = (content.style.display === "block") ? "none" : "block";
+        if(content.style.display === "block") {
+            content.scrollIntoView({ behavior: 'smooth' });
         }
     }
 </script>
