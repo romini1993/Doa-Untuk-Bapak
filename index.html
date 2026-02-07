@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOA UNTUK BAPAK</title>
     <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4caf50">
+    <link rel="apple-touch-icon" href="https://via.placeholder.com/192/4caf50/ffffff?text=DOA">
     <style>
         :root { --bg: #000000; --card: #161616; --text: #d1d1d1; --primary: #4caf50; --accent: #ffd54f; --border: #333; }
         body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg); margin: 0; padding: 0; color: var(--text); line-height: 1.5; font-size: 0.9rem; }
@@ -239,6 +241,15 @@ HISAB, <br>RABBANA LA TUZIGH QULUBANA BA'DA ED-HADDAITANA WAHABLANA MIL LADUNKA 
             x.style.display = "block";
             btn.innerHTML = "TUTUP SURAT YASIN";
         }
+    }
+
+    // --- SERVICE WORKER REGISTRATION ---
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then(reg => console.log('Aplikasi siap offline!', reg))
+          .catch(err => console.log('Gagal daftar SW:', err));
+      });
     }
 </script>
 </body>
