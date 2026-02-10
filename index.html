@@ -34,11 +34,59 @@
         .btn-wrapper { position: sticky; top: 65px; z-index: 90; padding: 5px 0; background: var(--bg); }
         .btn-yasin { display: block; width: 100%; padding: 15px; background: var(--primary); color: white; text-align: center; border-radius: 10px; font-weight: bold; font-size: 0.95rem; cursor: pointer; border: none; box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3); }
         
-        /* Yasin Latin Only */
+        /* Yasin Container */
         #yasin-content { display: none; background: #000; padding: 10px; border-radius: 8px; border: 1px solid var(--primary); margin-top: 10px; }
-        .yasin-item { border-bottom: 1px solid #222; padding: 10px 0; display: flex; align-items: flex-start; }
-        .yasin-no { color: var(--primary); font-weight: bold; min-width: 25px; font-size: 0.8rem; margin-top: 2px; }
+        
+        /* --- UPDATE CSS YASIN (Biar Arab Rapi & Numumpuk ke bawah) --- */
+        .yasin-item { 
+            border-bottom: 1px solid #222; 
+            padding: 15px 0; 
+            display: flex; 
+            flex-direction: column; /* Ubah jadi numpuk ke bawah */
+            gap: 5px;
+        }
+        
+        .yasin-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .yasin-no { 
+            color: #000; /* Text hitam */
+            background: var(--primary); /* Background hijau */
+            font-weight: bold; 
+            width: 28px;
+            height: 28px;
+            border-radius: 50%; /* Jadi bulat */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem; 
+        }
+        
+        /* Tambahan buat Text Arab */
+        .yasin-ar {
+            text-align: right;
+            font-size: 1.6rem; /* Ukuran gedein dikit */
+            color: #fff;
+            font-family: serif; /* Font standar yang ada lekukannya */
+            margin: 5px 0;
+            line-height: 1.8;
+        }
+
         .yasin-text-latin { color: var(--accent); font-style: italic; font-size: 0.9rem; line-height: 1.4; }
+
+        /* Style buat Jeda Ayat */
+        .yasin-gap {
+            text-align: center;
+            padding: 15px 0;
+            color: #666;
+            font-size: 0.8rem;
+            border-top: 1px dashed #333;
+            border-bottom: 1px dashed #333;
+            margin: 10px 0;
+        }
 
         footer { text-align: center; padding: 30px 20px; color: #555; font-size: 0.75rem; }
         .highlight { color: var(--primary); font-weight: bold; }
@@ -118,7 +166,7 @@ WA ILAAHUKUM ILAAHUW WAAHIDUN LAA ILAAHA ILLAA HUWAR ROHMAANUR ROHIIM.</p>
     </div>
 
     <div class="btn-wrapper">
-        <button class="btn-yasin" onclick="toggleYasin()">BACA SURAT YASIN (LATIN)</button>
+        <button class="btn-yasin" onclick="toggleYasin()">BACA SURAT YASIN (ARAB & LATIN)</button>
     </div>
 
     <div id="yasin-content">
@@ -154,88 +202,46 @@ HISAB, <br>RABBANA LA TUZIGH QULUBANA BA'DA ED-HADDAITANA WAHABLANA MIL LADUNKA 
 </footer>
 
 <script>
-    const yasinLatinData = [
-        {no: 1, lt: "Yaa-Siiin"}, {no: 2, lt: "Wal-Qur-aanil-Hakiim"}, {no: 3, lt: "Innaka laminal mursaliin"},
-        {no: 4, lt: "'Alaa Siraatim Mustaqiim"}, {no: 5, lt: "Tanziilal 'Aziizir Rahiim"}, {no: 6, lt: "Litunzira qawmam maaa unzira aabaaa'uhum fahum ghaafiluun"},
-        {no: 7, lt: "Laqad haqqal qawlu 'alaaa aksarihim fahum laa yu'minuun"}, {no: 8, lt: "Innaa ja'alnaa fiii a'naaqihim aghlaalan fahiya ilal azqooni fahum muqmahuun"},
-        {no: 9, lt: "Wa ja'alnaa mim baini aydiihim saddanw-wa min khalfihim saddan fa aghshai naahum fahum laa yubsiruun"},
-        {no: 10, lt: "Wa sawaaa'un 'alaihim 'a-anzartahum am lam tunzirhum laa yu'minuun"},
-        {no: 11, lt: "Innamaa tunziru manit taba 'az-Zikra wa khashiyar Rahmaana bilghaib; fabashshirhu bimaghfiratinw-wa ajrin kariim"},
-        {no: 12, lt: "Innaa Nahnu nuhyil mawtaa wa naktubu maa qaddamuu wa aasaarahum; wa kulla shai'in ahsainaahu fiii Imaamim Mubiin"},
-        {no: 13, lt: "Wadrib lahum masalan Ashaabal Qaryatih; iz jaaa'ahal mursaluun"},
-        {no: 14, lt: "Iz arsalnaaa ilaihimusnaini fakazzabuuhumaa fa'azzaznaa bisaalisin fa qooluuu innaaa ilaikum mursaluun"},
-        {no: 15, lt: "Qooluu maaa antum illaa basharum mislunaa wa maaa anzalar Rahmaanu min shai'in in antum illaa takzibuun"},
-        {no: 16, lt: "Qooluu Rabbunaa ya'lamu innaaa ilaikum lamursaluun"}, {no: 17, lt: "Wa maa 'alainaaa illal balaaghul mubiin"},
-        {no: 18, lt: "Qooluu innaa tataiyarnaa bikum la'il-lam tantahuu lanarjumannakum wa layamas sannakum minnaa 'azaabun aliim"},
-        {no: 19, lt: "Qooluu taaa'irukum ma'akum; a'in zukkirtum; bal antum qawmum musrifuun"},
-        {no: 20, lt: "Wa jaaa'a min aqsal madiinati rajuluny yas'aa qoola yaa qawmit tabi'ul mursaliin"},
-        {no: 21, lt: "Ittabi'uu mal-laa yas'alukum ajranw-wa hum muhtaduun"}, {no: 22, lt: "Wa maa liya laaa a'budul lazii fataranii wa ilaihi turja'uun"},
-        {no: 23, lt: "'A-attakhizu min duunihiii aalihatan iny-yuridnir Rahmaanu bidurril-laa tughni 'annii shafaa 'atuhum shai'anw-wa laa yunqizuun"},
-        {no: 24, lt: "Inniii izal-lafii dalaa-lim-mubiin"}, {no: 25, lt: "Inniii aamantu bi Rabbikum fasma'uun"},
-        {no: 26, lt: "Qiilad khulil Jannnah; qoola yaa laita qawmii ya'lamuun"}, {no: 27, lt: "Bimaa ghafara lii Rabbii wa ja'alanii minal mukramiin"},
-        {no: 28, lt: "Wa maaa anzalnaa 'alaa qawmihii mim ba'dihii min jundim minas-samaaa'i wa maa kunnaa munziliin"},
-        {no: 29, lt: "In kaanat illaa saihatanw waahidatan fa'izaa hum khaamiduun"},
-        {no: 30, lt: "Yaa hasratan 'alal 'ibaad; maa yaatiihim mir rasuulin illaa kaanuu bihii yastahzi'uun"},
-        {no: 31, lt: "Alam yaraw kam ahlak naa qablahum minal quruuni annahum ilaihim laa yarji'uun"},
-        {no: 32, lt: "Wa in kullul lammaa jamii'ul-ladainaa muhdaruun"},
-        {no: 33, lt: "Wa Aayatul lahumul ardul maitatu ahyainaahaa wa akhrajnaa minhaa habban faminhu yaakuluun"},
-        {no: 34, lt: "Wa ja'alnaa fiihaa jannaatim min nakhiilinw-wa a'naabinw-wa fajjarnaa fiihaa minal 'uyuun"},
-        {no: 35, lt: "Liyaakuluu min samarihii wa maa 'amilat-hu aidiihim; afalaa yashkuruun"},
-        {no: 36, lt: "Subhaanal lazii khalaqal azwaaja kullahaa mimmaa tumbitul ardu wa min anfusihim wa mimmaa laa ya'lamuun"},
-        {no: 37, lt: "Wa Aayatul lahumul lailu naslakhu minhun nahaara fa'izaa hum muzlimuun"},
-        {no: 38, lt: "Wash-shamsu tajrii limustaqarril lahaa; zaalika taqdiirul 'Aziizil 'Aliim"},
-        {no: 39, lt: "Walqamara qaddarnaahu manaazila hattaa 'aada kal'urjuunil qadiim"},
-        {no: 40, lt: "Lash shamsu yambaghii lahaaa an tudrikal qamara wa lal lailu saabiqun nahaar; wa kullun fii falakiny yasbahuun"},
-        {no: 41, lt: "Wa Aayatul lahum annaa hamalnaa zurriyatahum fil fulkil mashhuun"},
-        {no: 42, lt: "Wa khalaqnaa lahum mim-mislihii maa yarkabuun"},
-        {no: 43, lt: "Wa in nashaa nughriqhum falaa sariikha lahum wa laa hum yunqazuun"},
-        {no: 44, lt: "Illaa rahmatam minnaa wa mataa'an ilaa hiin"},
-        {no: 45, lt: "Wa izaa qiila lahumuttaquu maa baina aidiikum wa maa khalfakum la'allakum turhamuun"},
-        {no: 46, lt: "Wa maa taatiihim min aayatim min Aayaati Rabbihim illaa kaanuu 'anhaa mu'ridiin"},
-        {no: 47, lt: "Wa izaa qiila lahum anfiquu mimmaa razaqakumul laahu qoolal laziina kafaruu lillaziina aamanuuu anu-t'imu mal-law yashaaa'ul laahu at'amahuuu in antum illaa fii dalaalim mubiin"},
-        {no: 48, lt: "Wa yaquuluuna mataa haazal wa'du in kuntum saadiqiin"},
-        {no: 49, lt: "Maa yanzuruuna illaa saihatanw waahidatan taakhuzuhum wa hum yakhissimuun"},
-        {no: 50, lt: "Falaa yastatii'uuna taw siyatanw-wa laaa ilaaa ahlihim yarji'uun"},
-        {no: 51, lt: "Wa nufikha fis-suuri fa'izaa hum minal ajdaasi ilaa Rabbihim yansiluun"},
-        {no: 52, lt: "Qooluu yaa wailanaa mam ba'asanaa mim marqadinaa; haaza maa wa'adar Rahmaanu wa sadaqal mursaluun"},
-        {no: 53, lt: "In kaanat illaa saihatanw waahidatan fa'izaa hum jamii'ul-ladainaa muhdaruun"},
-        {no: 54, lt: "Fal-Yawma laa tuzlamu nafsun shai'anw-wa laa tujzawna illaa maa kuntum ta'maluun"},
-        {no: 55, lt: "Inna Ashaabal jannatil Yawma fii shughulin faakihuun"},
-        {no: 56, lt: "Hum wa azwaajuhum fii zilaalin 'alal araaa'iki muttaki'uun"},
-        {no: 57, lt: "Lahum fiihaa faakihatunw-wa lahum maa yadda'uun"},
-        {no: 58, lt: "Salaamun qawlam mir Rabbir Rahiim"},
-        {no: 59, lt: "Wamtaazul Yawma ayyuhal mujrimuun"},
-        {no: 60, lt: "Alam a'had ilaikum yaa Baniii Aadama al-laa ta'budush Shaitaan; innahuu lakum 'aduwwum mubiin"},
-        {no: 61, lt: "Wa ani'buduunii; haaza Siraatum Mustaqiim"},
-        {no: 62, lt: "Wa laqad adalla minkum jibillan kasiiraa; afalam takuunuu ta'qiluun"},
-        {no: 63, lt: "Haazihii Jahannamul latii kuntum tuu'aduun"},
-        {no: 64, lt: "Islawhal Yawma bimaa kuntum takfuruun"},
-        {no: 65, lt: "Al-Yawma nakhtimu 'alaaa afwaahihim wa tukallimunaaa aidiihim wa tashhadu arjuluhum bimaa kaanuu yaksibuun"},
-        {no: 66, lt: "Wa law nashaaa'u latamasnaa 'alaaa a'yunihim fastabaqus siraata fa-annaa yubsiruun"},
-        {no: 67, lt: "Wa law nashaaa'u lamasakhnaahum 'alaa makaanatihim famas tataa'uu muddiyanw-wa laa yarji'uun"},
-        {no: 68, lt: "Wa man nu'ammirhu nunakkishu fil khalq; afalaa ya'qiluun"},
-        {no: 69, lt: "Wa maa 'allamnaahush shi'ra wa maa yambaghii lah; in huwa illaa zikrunw-wa Qur-aanum mubiin"},
-        {no: 70, lt: "Liyunzira man kaana haiyanw-wa yahiqqal qawlu 'alal kaafiriin"},
-        {no: 71, lt: "Awalam yaraw annaa khalaqnaa lahum mimmaa 'amilat aidiinaaa an'aaman fahum lahaa maalikuun"},
-        {no: 72, lt: "Wa zallalnaahaa lahum faminhaa rakuubuhum wa minhaa yaakuluun"},
-        {no: 73, lt: "Wa lahum fiihaa manaa fi'u wa mashaarib; afalaa yashkuruun"},
-        {no: 74, lt: "Wattakhazuu min duunil laahi aalihatal la'allahum yunsaruuun"},
-        {no: 75, lt: "Laa yastatii'uuna nasrahum wa hum lahum jundum muhdaruun"},
-        {no: 76, lt: "Falaa yahzunka qawluhum; innaa na'lamu maa yusirruuna wa maa yu'linuun"},
-        {no: 77, lt: "Awalam yaral insaanu annaa khalaqnaahu min nutfatin fa'izaa huwa khasiimum mubiin"},
-        {no: 78, lt: "Wa daraba lanaa masalanw-wa nasiya khalqahuu qoola many-yuhyil 'izaama wa hiya ramiim"},
-        {no: 79, lt: "Qul yuh yiihal laziii ansha ahaaa awwala marrah; wa Huwa bikulli khalqin 'Aliim"},
-        {no: 80, lt: "Allazii ja'ala lakum minash shajaril akhdari naaran fa'izaa antum minhu tuuqiduun"},
-        {no: 81, lt: "Awa laisal lazii khalaqas samaawaati wal arda bi qoodirin 'alaaa any-yakhluqa mislahum; balaa wa Huwal Khallaaqul 'Aliim"},
-        {no: 82, lt: "Innamaaa amruhuuu izaaa araada shai'an any-yaquula lahuu KUN fa-yakuun"},
-        {no: 83, lt: "Fa Subhaanal lazii biyadihii malakuutu kulli shai-inw-wa ilaihi turja'uun"}
+    // --- DATA YASIN (Gabungan 1-5 dan 80-83) ---
+    const yasinData = [
+        {no: 1, ar: "يٰسٓ", lt: "Yaa-Siiin"},
+        {no: 2, ar: "وَالۡقُرۡاٰنِ الۡحَكِيۡمِ", lt: "Wal-Qur-aanil-Hakiim"},
+        {no: 3, ar: "اِنَّكَ لَمِنَ الۡمُرۡسَلِيۡنَۙ", lt: "Innaka laminal mursaliin"},
+        {no: 4, ar: "عَلٰى صِرَاطٍ مُّسۡتَقِيۡمٍؕ", lt: "'Alaa Siraatim Mustaqiim"},
+        {no: 5, ar: "تَنۡزِيۡلَ الۡعَزِيۡزِ الرَّحِيۡمِ", lt: "Tanziilal 'Aziizir Rahiim"},
+        
+        // --- Jeda di sini nanti otomatis dibuat garis ---
+        
+        {no: 80, ar: "اۨلَّذِىۡ جَعَلَ لَـكُمۡ مِّنَ الشَّجَرِ الۡاَخۡضَرِ نَارًا فَاِذَاۤ اَنۡـتُمۡ مِّنۡهُ تُوۡقِدُوۡنَ", lt: "Allazii ja'ala lakum minash shajaril akhdari naaran fa'izaa antum minhu tuuqiduun"},
+        {no: 81, ar: "اَوَلَيۡسَ الَّذِىۡ خَلَقَ السَّمٰوٰتِ وَالۡاَرۡضَ بِقٰدِرٍ عَلٰٓى اَنۡ يَّخۡلُقَ مِثۡلَهُمۡ ؕ بَلٰى وَهُوَ الۡخَلّٰقُ الۡعَلِيۡمُ", lt: "Awa laisal lazii khalaqas samaawaati wal arda bi qoodirin 'alaaa any-yakhluqa mislahum; balaa wa Huwal Khallaaqul 'Aliim"},
+        {no: 82, ar: "اِنَّمَاۤ اَمۡرُهٗۤ اِذَاۤ اَرَادَ شَيۡـــًٔا اَنۡ يَّقُوۡلَ لَهٗ كُنۡ فَيَكُوۡنُ", lt: "Innamaaa amruhuuu izaaa araada shai'an any-yaquula lahuu KUN fa-yakuun"},
+        {no: 83, ar: "فَسُبۡحٰنَ الَّذِىۡ بِيَدِهٖ مَلَـكُوۡتُ كُلِّ شَىۡءٍ وَّاِلَيۡهِ تُرۡجَعُوۡنَ", lt: "Fa Subhaanal lazii biyadihii malakuutu kulli shai-inw-wa ilaihi turja'uun"}
     ];
 
     const listDiv = document.getElementById('yasin-list');
-    yasinLatinData.forEach(item => {
+    
+    // --- LOGIKA GENERATE LIST ---
+    yasinData.forEach((item, index) => {
+        // Cek apakah ada loncat nomor jauh?
+        if(index > 0) {
+            const prevNo = yasinData[index-1].no;
+            if(item.no - prevNo > 1) {
+                const gapDiv = document.createElement('div');
+                gapDiv.className = 'yasin-gap';
+                gapDiv.innerHTML = `... (Ayat ${prevNo + 1} s/d ${item.no - 1} dilewati) ...`;
+                listDiv.appendChild(gapDiv);
+            }
+        }
+
         const div = document.createElement('div');
         div.className = 'yasin-item';
-        div.innerHTML = `<div class="yasin-no">${item.no}</div><div class="yasin-text-latin">${item.lt}</div>`;
+        div.innerHTML = `
+            <div class="yasin-header">
+                <div class="yasin-no">${item.no}</div>
+            </div>
+            <div class="yasin-ar">${item.ar}</div>
+            <div class="yasin-text-latin">${item.lt}</div>
+        `;
         listDiv.appendChild(div);
     });
 
@@ -244,14 +250,14 @@ HISAB, <br>RABBANA LA TUZIGH QULUBANA BA'DA ED-HADDAITANA WAHABLANA MIL LADUNKA 
         var btn = document.querySelector(".btn-yasin");
         if (x.style.display === "block") {
             x.style.display = "none";
-            btn.innerHTML = "BACA SURAT YASIN (LATIN)";
+            btn.innerHTML = "BACA SURAT YASIN (ARAB & LATIN)";
         } else {
             x.style.display = "block";
             btn.innerHTML = "TUTUP SURAT YASIN";
         }
     }
 
-    // --- SERVICE WORKER REGISTRATION ---
+    // --- SERVICE WORKER REGISTRATION (TETAP ADA) ---
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('./sw.js')
