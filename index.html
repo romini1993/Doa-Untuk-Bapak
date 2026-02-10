@@ -208,10 +208,10 @@ HISAB, <br>RABBANA LA TUZIGH QULUBANA BA'DA ED-HADDAITANA WAHABLANA MIL LADUNKA 
     
     // --- LOGIKA GENERATE LIST ---
     yasinData.forEach((item, index) => {
-        // Cek apakah ada loncat nomor jauh?
-        if(index > 0) {
+        // Cek loncat nomor (biar gap muncul kalau ada ayat dilewati)
+        if(index > 0 && item.no > 0) {
             const prevNo = yasinData[index-1].no;
-            if(item.no - prevNo > 1) {
+            if(prevNo > 0 && item.no - prevNo > 1) {
                 const gapDiv = document.createElement('div');
                 gapDiv.className = 'yasin-gap';
                 gapDiv.innerHTML = `... (Ayat ${prevNo + 1} s/d ${item.no - 1} dilewati) ...`;
@@ -221,12 +221,15 @@ HISAB, <br>RABBANA LA TUZIGH QULUBANA BA'DA ED-HADDAITANA WAHABLANA MIL LADUNKA 
 
         const div = document.createElement('div');
         div.className = 'yasin-item';
+        
+        // Atur posisi: Bismillah (no 0) di Tengah, Ayat lain di Kanan
+        const textAlign = item.no === 0 ? 'text-align: center;' : 'text-align: right;';
+        const noHtml = item.no > 0 ? `<div class="yasin-header"><div class="yasin-no">${item.no}</div></div>` : '';
+
         div.innerHTML = `
-            <div class="yasin-header">
-                <div class="yasin-no">${item.no}</div>
-            </div>
-            <div class="yasin-ar">${item.ar}</div>
-            <div class="yasin-text-latin">${item.lt}</div>
+            ${noHtml}
+            <div class="yasin-ar" style="${textAlign}">${item.ar}</div>
+            <div class="yasin-text-latin" style="${textAlign}">${item.lt}</div>
         `;
         listDiv.appendChild(div);
     });
