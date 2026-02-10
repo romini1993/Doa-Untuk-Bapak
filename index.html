@@ -1,1 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOA UNTUK BAPAK</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4caf50">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { --bg: #000000; --card: #161616; --text: #d1d1d1; --primary: #4caf50; --accent: #ffd54f; --border: #333; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg); margin: 0; padding: 0; color: var(--text); line-height: 1.5; font-size: 0.9rem; }
+        header { background: #000; color: var(--primary); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 100; border-bottom: 2px solid var(--primary); box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+        .container { padding: 12px; max-width: 600px; margin: auto; }
+        .card { background: var(--card); padding: 15px; border-radius: 10px; margin-bottom: 15px; border: 1px solid var(--border); }
+        
+        h2 { border-bottom: 1px solid var(--primary); padding-bottom: 5px; color: var(--primary); font-size: 0.9rem; text-transform: uppercase; margin-top: 0; }
+        h3 { font-size: 0.85rem; color: var(--accent); margin-top: 10px; border-left: 3px solid var(--accent); padding-left: 8px; }
+        
+        .bismillah { font-size: 1.5rem; text-align: center; margin: 15px 0; font-family: 'Amiri', serif; color: #fff; }
+        .latin { font-weight: 500; color: #fff; margin-bottom: 6px; font-size: 0.9rem; line-height: 1.4; }
+        .sunda { font-style: italic; background: #0d1b2a; padding: 12px; border-radius: 8px; color: #e0e0e0; border-left: 5px solid var(--primary); line-height: 1.6; font-size: 0.85rem; }
+        
+        .khususon-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+        .silsilah-box { background: #1a1a1a; padding: 8px; border-radius: 6px; border: 1px dashed #444; }
+        .silsilah-list { line-height: 1.5; font-weight: bold; color: var(--accent); font-size: 0.8rem; }
 
+        .btn-wrapper { position: sticky; top: 65px; z-index: 90; padding: 5px 0; background: var(--bg); }
+        .btn-yasin { display: block; width: 100%; padding: 15px; background: var(--primary); color: white; text-align: center; border-radius: 10px; font-weight: bold; font-size: 0.95rem; cursor: pointer; border: none; box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3); }
+        
+        footer { text-align: center; padding: 30px 20px; color: #555; font-size: 0.75rem; }
+        .highlight { color: var(--primary); font-weight: bold; }
+        hr { border: 0; border-top: 1px solid #333; margin: 10px 0; }
+
+        /* --- INI CSS YANG BARU BUAT YASIN BIAR KEREN --- */
+        #yasin-content { display: none; background: #050505; padding: 10px; border-radius: 8px; border: 1px solid var(--primary); margin-top: 10px; }
+        
+        /* Kotak per ayat */
+        .yasin-item { 
+            border-bottom: 1px solid #222; 
+            padding: 20px 0; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 8px; 
+        }
+
+        /* Bagian Nomor Ayat */
+        .yasin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
+        .yasin-no { 
+            background: var(--primary); 
+            color: #000; 
+            font-weight: bold; 
+            width: 32px; 
+            height: 32px; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 0.85rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+
+        /* Teks Arab: Besar, Font Bagus, Rata Kanan */
+        .yasin-ar { 
+            text-align: right; 
+            font-size: 2rem; /* Ukuran Arab Gede */
+            color: #fff; 
+            font-family: 'Amiri', serif; 
+            line-height: 2.2; 
+            margin-bottom: 5px;
+            direction: rtl; /* Pastikan arah kanan ke kiri */
+        }
+
+        /* Teks Latin: Kuning/Emas, Miring */
+        .yasin-lt { 
+            color: var(--accent); 
+            font-style: italic; 
+            font-size: 1rem; 
+            line-height: 1.5; 
+            text-align: left;
+        }
+
+        /* Garis Putus-putus Pemisah */
+        .separator {
+            text-align: center;
+            padding: 25px 0;
+            color: #666;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            border-bottom: 1px dashed #333;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div style="font-size: 1rem; font-weight: bold; letter-spacing: 1px;">DOA UNTUK BAPAK</div>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <div class="bismillah">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+        <p class="latin">ASTAGFIRULLAHALADZIM (3X)</p>
+        <p class="latin">ALAZILAILAHAILA HUWALHAYULQOYUM WAATUBU ILAIHI</p>
+        <p class="latin">ASHADU ALA ILAHA ILALLAH WAASYHADU ANNA MUHAMMADAR RASULULLAH</p>
+    </div>
+
+    <div class="card">
+        <h2>1. HADIAT (TAWASUL)</h2>
+        <p class="latin">ILA HADROTIN NABIYYIL MUSTHOFA... <span class="highlight">AL-FATIHAH...</span></p>
+    </div>
+
+    <div class="card">
+        <h2>2. KHUSUSON AHLAL KUBUR</h2>
+        <p class="latin">TSUMMA ILA ARWAHI AHLIL KUBUR KHUSHUSHON (ALMARHUM & ALMARHUMMAH):</p>
+        
+        <div class="khususon-grid">
+            <div class="silsilah-box">
+                <h3>KELUARGA BAPAK:</h3>
+                <div class="silsilah-list">
+                    EMAD BIN ATA<br>MUNAH BINTI ATA<br>ATA BIN SINAN<br>(Dan Seterusnya...)
+                </div>
+            </div>
+            <div>
+                <div class="silsilah-box">
+                    <h3>KELUARGA IBU:</h3>
+                    <div class="silsilah-list">MINING BIN GADEL<br>(Dan Seterusnya...)</div>
+                </div>
+            </div>
+        </div>
+        <p class="latin" style="margin-top:15px;">AL-FATIHAH...</p>
+    </div>
+
+    <div class="card">
+        <h2>3. TAHLIL & SURAH PENDEK</h2>
+        <p class="latin">LAILLAHAILLAH HU ALLAHU AKBAR (BISMILLAH... AL-IKHLAS 3X)</p>
+        <hr>
+        <p class="latin">LAA ILAAHA ILLALLAAH (33X)... <span class="highlight">AL-FATIHAH...</span></p>
+    </div>
+
+    <div class="btn-wrapper">
+        <button class="btn-yasin" onclick="toggleYasin()">BACA SURAT YASIN (ARAB & LATIN)</button>
+    </div>
+
+    <div id="yasin-content">
+        <div id="yasin-list"></div>
+        <p style="text-align:center; color:var(--primary); font-weight:bold; padding: 15px; font-size: 0.8rem;">Selesai Yasin, lanjut Doa Penutup di bawah.</p>
+    </div>
+
+    <div class="card" style="margin-top:20px;">
+        <h2>4. DOA PENUTUPAN</h2>
+        <p class="latin">ALHAMDULILLAH HIROBBIL ALAMIN...</p>
+        <div class="sunda">
+            MUDAH MUDAHAN NGAOSAN HADIAH SARENG YASIN IYEU DI TAMPI KU ALLAH SWT...
+            KHUSUSNA ALMARHUM BAPAK EMAD BIN ATA.
+        </div>
+        <p class="latin" style="margin-top:15px;">AL-FATIHAH.</p>
+    </div>
+
+</div>
+
+<footer>
+    Dibuat dengan tulus untuk Almarhum Bapak Emad bin Ata & Keluarga
+</footer>
+
+<script>
+    // DATA YASIN (GABUNGAN AWAL DAN AKHIR)
+    const yasinData = [
+        {no: 1, ar: "يٰسٓ", lt: "Yaa-Siiin"},
+        {no: 2, ar: "وَالۡقُرۡاٰنِ الۡحَكِيۡمِ", lt: "Wal-Qur-aanil-Hakiim"},
+        {no: 3, ar: "اِنَّكَ لَمِنَ الۡمُرۡسَلِيۡنَۙ", lt: "Innaka laminal mursaliin"},
+        {no: 4, ar: "عَلٰى صِرَاطٍ مُّسۡتَقِيۡمٍؕ", lt: "'Alaa Siraatim Mustaqiim"},
+        {no: 5, ar: "تَنۡزِيۡلَ الۡعَزِيۡزِ الرَّحِيۡمِ", lt: "Tanziilal 'Aziizir Rahiim"},
+
+        // --- DISINI CERITANYA LONCAT ---
+
+        {no: 80, ar: "اۨلَّذِىۡ جَعَلَ لَـكُمۡ مِّنَ الشَّجَرِ الۡاَخۡضَرِ نَارًا فَاِذَاۤ اَنۡـتُمۡ مِّنۡهُ تُوۡقِدُوۡنَ", lt: "Allazii ja'ala lakum minash shajaril akhdari naaran fa'izaa antum minhu tuuqiduun"},
+        {no: 81, ar: "اَوَلَيۡسَ الَّذِىۡ خَلَقَ السَّمٰوٰتِ وَالۡاَرۡضَ بِقٰدِرٍ عَلٰٓى اَنۡ يَّخۡلُقَ مِثۡلَهُمۡ ؕ بَلٰى وَهُوَ الۡخَلّٰقُ الۡعَلِيۡمُ", lt: "Awa laisal lazii khalaqas samaawaati wal arda bi qoodirin 'alaaa any-yakhluqa mislahum; balaa wa Huwal Khallaaqul 'Aliim"},
+        {no: 82, ar: "اِنَّمَاۤ اَمۡرُهٗۤ اِذَاۤ اَرَادَ شَيۡـــًٔا اَنۡ يَّقُوۡلَ لَهٗ كُنۡ فَيَكُوۡنُ", lt: "Innamaaa amruhuuu izaaa araada shai'an any-yaquula lahuu KUN fa-yakuun"},
+        {no: 83, ar: "فَسُبۡحٰنَ الَّذِىۡ بِيَدِهٖ مَلَـكُوۡتُ كُلِّ شَىۡءٍ وَّاِلَيۡهِ تُرۡجَعُوۡنَ", lt: "Fa Subhaanal lazii biyadihii malakuutu kulli shai-inw-wa ilaihi turja'uun"}
+    ];
+
+    const listDiv = document.getElementById('yasin-list');
+    
+    // LOGIKA BIAR OTOMATIS GABUNG DAN ADA PEMISAHNYA
+    yasinData.forEach((item, index) => {
+        
+        // 1. Cek dulu, apakah nomor ayat ini loncat jauh dari sebelumnya?
+        if (index > 0) {
+            const prevNo = yasinData[index - 1].no;
+            // Kalau selisihnya lebih dari 1 angka (misal 5 ke 80)
+            if (item.no - prevNo > 1) {
+                const sep = document.createElement('div');
+                sep.className = 'separator';
+                sep.innerHTML = `• • • • • (Ayat ${prevNo + 1} s.d ${item.no - 1} dilewati) • • • • •`;
+                listDiv.appendChild(sep);
+            }
+        }
+
+        // 2. Bikin tampilan ayatnya
+        const div = document.createElement('div');
+        div.className = 'yasin-item';
+        div.innerHTML = `
+            <div class="yasin-header">
+                <div class="yasin-no">${item.no}</div>
+            </div>
+            <div class="yasin-ar">${item.ar}</div>
+            <div class="yasin-lt">${item.lt}</div>
+        `;
+        listDiv.appendChild(div);
+    });
+
+    function toggleYasin() {
+        var x = document.getElementById("yasin-content");
+        var btn = document.querySelector(".btn-yasin");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+            btn.innerHTML = "BACA SURAT YASIN (ARAB & LATIN)";
+            btn.scrollIntoView({behavior: "smooth", block: "center"});
+        } else {
+            x.style.display = "block";
+            btn.innerHTML = "TUTUP SURAT YASIN";
+        }
+    }
+
+    // SERVICE WORKER (TETEPIN AJA BIAR BISA OFFLINE)
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then(reg => console.log('Aplikasi siap offline!', reg))
+          .catch(err => console.log('Gagal daftar SW:', err));
+      });
+    }
+</script>
+</body>
+</html>
