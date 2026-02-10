@@ -11,7 +11,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Lateef&display=swap" rel="stylesheet">
     
     <style>
-        :root { --bg: #000000; --card: #161616; --text: #d1d1d1; --primary: #4caf50; --accent: #ffd54f; --border: #333; }
+        /* WARNA DISESUAIKAN BIAR LEBIH SOFT DI MATA */
+        :root { 
+            --bg: #121212; /* Hitam soft (nggak pekat banget) */
+            --card: #1e1e1e; /* Warna kartu lebih soft */
+            --text: #c0c0c0; /* Tulisan abu-abu soft */
+            --primary: #4caf50; 
+            --accent: #e0c068; /* Kuning kalem/soft */
+            --border: #2a2a2a; 
+            --white-soft: #e0e0e0; /* Putih yang nggak nyolok mata */
+        }
+
         body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg); margin: 0; padding: 0; color: var(--text); line-height: 1.5; font-size: 0.9rem; }
         header { background: #000; color: var(--primary); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 100; border-bottom: 2px solid var(--primary); box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
         .container { padding: 12px; max-width: 600px; margin: auto; }
@@ -20,11 +30,10 @@
         h2 { border-bottom: 1px solid var(--primary); padding-bottom: 5px; color: var(--primary); font-size: 0.9rem; text-transform: uppercase; margin-top: 0; }
         h3 { font-size: 0.85rem; color: var(--accent); margin-top: 10px; border-left: 3px solid var(--accent); padding-left: 8px; }
         
-        /* Font Lateef diterapkan di Bismillah */
-        .bismillah { font-size: 1.8rem; text-align: center; margin: 15px 0; font-family: 'Lateef', serif; color: #fff; }
+        .bismillah { font-size: 1.8rem; text-align: center; margin: 15px 0; font-family: 'Lateef', serif; color: var(--white-soft); }
         
-        .latin { font-weight: 500; color: #fff; margin-bottom: 6px; font-size: 0.9rem; line-height: 1.4; }
-        .sunda { font-style: italic; background: #0d1b2a; padding: 12px; border-radius: 8px; color: #e0e0e0; border-left: 5px solid var(--primary); line-height: 1.6; font-size: 0.85rem; }
+        .latin { font-weight: 500; color: var(--white-soft); margin-bottom: 6px; font-size: 0.9rem; line-height: 1.4; }
+        .sunda { font-style: italic; background: #0d1b2a; padding: 12px; border-radius: 8px; color: #b0b0b0; border-left: 5px solid var(--primary); line-height: 1.6; font-size: 0.85rem; }
         
         .khususon-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
         .silsilah-box { background: #1a1a1a; padding: 8px; border-radius: 6px; border: 1px dashed #444; }
@@ -33,20 +42,19 @@
         .btn-wrapper { position: sticky; top: 65px; z-index: 90; padding: 5px 0; background: var(--bg); }
         .btn-yasin { display: block; width: 100%; padding: 15px; background: var(--primary); color: white; text-align: center; border-radius: 10px; font-weight: bold; font-size: 0.95rem; cursor: pointer; border: none; box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3); }
         
-        #yasin-content { display: none; background: #000; padding: 10px; border-radius: 8px; border: 1px solid var(--primary); margin-top: 10px; }
+        #yasin-content { display: none; background: #121212; padding: 10px; border-radius: 8px; border: 1px solid var(--primary); margin-top: 10px; }
         
         .yasin-item { border-bottom: 1px solid #222; padding: 15px 0; display: flex; flex-direction: column; gap: 5px; }
         .yasin-header { display: flex; align-items: center; margin-bottom: 5px; }
         .yasin-no { color: #000; background: var(--primary); font-weight: bold; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; }
         
-        /* Font Lateef diterapkan di Arab Yasin */
         .yasin-ar {
             text-align: right;
             font-size: 2.2rem; 
-            color: #fff;
+            color: var(--white-soft);
             font-family: 'Lateef', serif; 
             margin: 5px 0;
-            line-height: 1.1;
+            line-height: 1.2;
         }
 
         .yasin-text-latin { color: var(--accent); font-style: italic; font-size: 0.9rem; line-height: 1.4; }
@@ -185,7 +193,6 @@ HISAB, <br>RABBANA LA TUZIGH QULUBANA BA'DA ED-HADDAITANA WAHABLANA MIL LADUNKA 
         const div = document.createElement('div');
         div.className = 'yasin-item';
         
-        // Logika perataan teks sesuai permintaan Bro Minas
         const arAlign = item.no === 0 ? 'text-align: center !important;' : 'text-align: right !important;';
         const ltAlign = item.no === 0 ? 'text-align: center !important;' : 'text-align: left !important;';
 
