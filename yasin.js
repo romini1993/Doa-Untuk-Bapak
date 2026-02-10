@@ -1,6 +1,6 @@
 const yasinData = [
-{no:0, ar: "بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ", lt: ""},
-{no:1, ar:"يٰسٓ", lt:"Yaa-Siiin"},
+{no: 0, ar: "بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ", lt: "Bismillaahir Rahmaanir Rahiim"},
+{no: 1, ar: "يٰسٓ", lt: "Yaa-Siiin"},
 {no:2, ar:"وَالۡقُرۡاٰنِ الۡحَكِيۡمِ", lt:"Wal-Qur-aanil-Hakiim"},
 {no:3, ar:"اِنَّكَ لَمِنَ الۡمُرۡسَلِيۡنَۙ", lt:"Innaka laminal mursaliin"},
 {no:4, ar:"عَلٰى صِرَاطٍ مُّسۡتَقِيۡمٍؕ‏", lt:"'Alaa Siraatim Mustaqiim"},
