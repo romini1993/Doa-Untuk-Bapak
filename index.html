@@ -191,7 +191,7 @@ WA ILAAHUKUM ILAAHUW WAAHIDUN LAA ILAAHA ILLAA HUWAR ROHMAANUR ROHIIM.</p>
         <p class="latin">ALLAHUMMA FIRLANA ZUNUBANA WALIWALIDINA WARHAMHUMA KAMA ROBBAYANI SOGHIRO</p>
         <p class="latin">ALLAHUMMA FIRLAHU WARHAMHU WA'AFIHI WA'FUANHU</p>
         <hr>
-        <p class="latin">ALLAHUMMA INNA NAS ALUKA SALAMATAN FIDDIN, <br>WA AFIYATAN FIL JASADI, <br>WA ZIADATAN FIL ILMI, <br>WA BARAKATAN FI RIZKI, <br>WA TAUBATAN QOBLAL MAUT, <br>WARAHMATAN INDAL MAUT, <br>WA MAGHFIRATAN BA'DAL MAUT. <br><br>ALLAHUMMA HAWWIN ALAINA FID SAKARATIL MAUT, <br>WANNAJATA MINANNAR WAL AFWA INDAL 
+        <p class="latin">ALLAHUMMA INNA NAS ALUKA SALAMATAN FIDDIN, <br>WA AFIYATAN FIL JASADI, <br>WA ZIADATAN FIL ILMI, <br>WA BARAKATAN FI RIZKI, <br>WA TAUBATAN QOBLAL MAUT, <br>WARAHMATAN INDAL MAUT, <br>WA MAGHFIRATAN BA'DAL MAUT. <br><br>ALLAHUMMA HAWWIN ALAINA FI SAKARATIL MAUT, <br>WANNAJATA MINANNAR WAL AFWA INDAL 
 HISAB, <br>RABBANA LA TUZIGH QULUBANA BA'DA ED-HADDAITANA WAHABLANA MIL LADUNKA RAHMATAN INNAKA ANTAL WAHHAB <br><br>RABBANA ATINA FIDDUNYA HASANAH, <br>WAFIL AKHIROTI HASANAH WAQINA ADZABANNAR. <br>SUBHANA RABBIKA RABBIL IZZATI AMMA YASIFUN, <br>WASALAMUN ALAL MURSALIN WALHAMDULILLAHI RABBIL ALAMIN. <span class="highlight">AL-FATIHAH</span></p>
     </div>
 
@@ -220,18 +220,17 @@ HISAB, <br>RABBANA LA TUZIGH QULUBANA BA'DA ED-HADDAITANA WAHABLANA MIL LADUNKA 
         const div = document.createElement('div');
         div.className = 'yasin-item';
         
-        // --- LOGIKA RATA TENGAH ---
-        let textAlign = 'text-align: right;'; 
-        if (item.no === 0) {
-            textAlign = 'text-align: center !important;';
-        }
+        // Atur posisi Arab: Bismillah di tengah, Ayat di kanan
+        const arAlign = item.no === 0 ? 'text-align: center !important;' : 'text-align: right !important;';
+        // Atur posisi Latin: Bismillah di tengah, Ayat di kiri
+        const ltAlign = item.no === 0 ? 'text-align: center !important;' : 'text-align: left !important;';
 
         const noHtml = item.no > 0 ? `<div class="yasin-header"><div class="yasin-no">${item.no}</div></div>` : '';
 
         div.innerHTML = `
             ${noHtml}
-            <div class="yasin-ar" style="${textAlign} width: 100%;">${item.ar}</div>
-            <div class="yasin-text-latin" style="${textAlign} width: 100%;">${item.lt}</div>
+            <div class="yasin-ar" style="${arAlign} width: 100%;">${item.ar}</div>
+            <div class="yasin-text-latin" style="${ltAlign} width: 100%;">${item.lt}</div>
         `;
         listDiv.appendChild(div);
     });
