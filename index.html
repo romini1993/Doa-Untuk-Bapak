@@ -227,5 +227,27 @@ WA ILAAHUKUM ILAAHUW WAAHIDUN LAA ILAAHA ILLAA HUWAR ROHMAANUR ROHIIM.</p>
       });
     }
 </script>
+   <script>
+    let wakeLock = null;
+
+    const requestWakeLock = async () => {
+      try {
+        if ('wakeLock' in navigator) {
+            wakeLock = await navigator.wakeLock.request('screen');
+            console.log('Mantap Bro, layar bakal tetep nyala!');
+        }
+      } catch (err) {
+        console.error(`${err.name}, ${err.message}`);
+      }
+    };
+
+    requestWakeLock();
+
+    document.addEventListener('visibilitychange', async () => {
+      if (wakeLock !== null && document.visibilityState === 'visible') {
+        await requestWakeLock();
+      }
+    });
+</script>
 </body>
 </html>
